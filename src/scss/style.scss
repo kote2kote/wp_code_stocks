@@ -1,0 +1,25 @@
+/*!
+Theme Name: wp_code_stocks
+Author: kote2
+Author URI: https://kote2.tokyo/
+Description: basic headless theme.
+Version: 2.0.0
+License: GNU General Public License v3 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// commons
+@import 'variables';
+@import 'functions';
+@import 'mixins';
+@import 'fonts/fonts';
+@import 'common';
+@import 'https://codepen.io/kote2kote/pen/bGWRWqG.css'; // form reset
+@import 'parts_common';
+
+// pages
+@import 'pages/pages.scss';
+@import 'pages/210405_pocari.scss';

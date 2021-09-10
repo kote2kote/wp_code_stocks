@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="131.037" height="138.547" viewBox="0 0 131.037 138.547">
+  <g id="test" transform="translate(-60.963 -1107.148)">
+    <path id="laptop-solid" d="M127.761,85.174H78.119a6.454,6.454,0,0,1-6.7,6.552H58.967a6.953,6.953,0,0,1-6.71-6.552H3.276A3.286,3.286,0,0,0,0,88.45v3.276a13.142,13.142,0,0,0,13.1,13.1h104.83a13.142,13.142,0,0,0,13.1-13.1V88.45A3.286,3.286,0,0,0,127.761,85.174ZM117.933,9.828A9.857,9.857,0,0,0,108.106,0H22.931A9.857,9.857,0,0,0,13.1,9.828V78.622h104.83Zm-13.1,55.691H26.207V13.1H104.83Z" transform="translate(60.963 1140.865)" fill="#464646"/>
+    <g id="_927" data-name="927" transform="translate(-101.189 36.107)">
+      <g id="_649" data-name="649" transform="translate(211 1123)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="33.342" height="42.011" stroke="none"/>
+        <rect x="0.5" y="0.5" width="32.342" height="41.011" fill="none"/>
+      </g>
+      <text id="html" transform="translate(215.001 1147.67)" fill="#424242" font-size="10" font-family="NotoSansJP-Bold, Noto Sans JP Bold" font-weight="700"><tspan x="0" y="0">html</tspan></text>
+    </g>
+    <text id="user" transform="translate(84 1130.148)" fill="#424242" font-size="20" font-family="NotoSansJP-Bold, Noto Sans JP Bold" font-weight="700"><tspan x="0" y="0">ユーザー</tspan></text>
+  </g>
+</svg>

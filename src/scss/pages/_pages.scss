@@ -1,0 +1,35 @@
+.card-link {
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+.aside {
+  a {
+    text-decoration: underline;
+  }
+  .submenu-search {
+    &-fieldset {
+      input {
+        background: #f2f3f5;
+        border: #bababa 1px solid;
+        &::placeholder {
+          color: #b9b9b9;
+          letter-spacing: 1px;
+        }
+      }
+      button {
+        top: 0.8rem;
+        right: 1rem;
+        color: #8c9095;
+        @include bp(pc) {
+          color: #10141a;
+        }
+      }
+    }
+  }
+}

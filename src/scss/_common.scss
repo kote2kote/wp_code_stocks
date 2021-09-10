@@ -1,0 +1,220 @@
+// -- check mode--------------------
+.cm {
+  box-sizing: border-box;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(245, 245, 245, 0.1),
+    rgba(245, 245, 245, 0.1) 10px,
+    rgba(136, 136, 136, 0.2) 0,
+    rgba(136, 136, 136, 0.2) 20px
+  );
+  border: solid 1px rgba(68, 68, 68, 0.2);
+}
+
+// -- transition --------------------
+.com_transition {
+  transition: all 0.3s ease;
+}
+.com_hover-action {
+  transition: all 0.2s ease;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+// -- ie --------------------
+// @media all and (-ms-high-contrast: none) {
+@media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE10 以降にのみ適用される */
+  .ie-block {
+    display: block;
+  }
+  .ie-hidden {
+    display: none;
+  }
+}
+
+// -- responsive --------------------
+
+.is-tb {
+  display: none;
+  @include bp(tb) {
+    display: block;
+  }
+}
+.is-maxtb {
+  display: none;
+  @include bp(maxtb) {
+    display: block;
+  }
+}
+.is-tbpc {
+  display: none;
+  @include bp(tbpc) {
+    display: block;
+  }
+}
+.is-pc {
+  display: none;
+  @include bp(pc) {
+    display: block;
+  }
+}
+.is-maxpc {
+  display: none;
+  @include bp(maxpc) {
+    display: block;
+  }
+}
+.is-sm {
+  display: none;
+  @include bp(sm) {
+    display: block;
+  }
+}
+.is-maxsm {
+  display: none;
+  @include bp(maxsm) {
+    display: block;
+  }
+}
+.is-smmd {
+  display: none;
+  @include bp(smmd) {
+    display: block;
+  }
+}
+.is-md {
+  display: none;
+  @include bp(md) {
+    display: block;
+  }
+}
+.is-maxmd {
+  display: none;
+  @include bp(maxmd) {
+    display: block;
+  }
+}
+.is-mdlg {
+  display: none;
+  @include bp(mdlg) {
+    display: block;
+  }
+}
+.is-lg {
+  display: none;
+  @include bp(lg) {
+    display: block;
+  }
+}
+.is-maxlg {
+  display: none;
+  @include bp(maxlg) {
+    display: block;
+  }
+}
+.is-lgxl {
+  display: none;
+  @include bp(lgxl) {
+    display: block;
+  }
+}
+.is-xl {
+  display: none;
+  @include bp(xl) {
+    display: block;
+  }
+}
+.is-maxxl {
+  display: none;
+  @include bp(maxxl) {
+    display: block;
+  }
+}
+.is-xlwide {
+  display: none;
+  @include bp(xlwide) {
+    display: block;
+  }
+}
+.is-maxwide {
+  display: none;
+  @include bp(maxwide) {
+    display: block;
+  }
+}
+.is-wide {
+  display: none;
+  @include bp(wide) {
+    display: block;
+  }
+}
+.is-print {
+  display: none;
+  @include bp(print) {
+    display: block;
+  }
+}
+
+// -- objectfit --------------------
+.c-object-coverIE {
+  font-family: 'object-fit: cover;'; /* IE対策 */
+}
+
+// ==================================================
+// parts common
+// ==================================================
+h2.com_tail,
+.h2.com_tail {
+  @apply flex flex-row items-center relative pl-4 pt-2 pb-2 pr-2 border-b-2 font-bold text-3xl;
+  // background-color: #424242;
+  &.with-margin {
+    @apply mt-12 mb-8;
+  }
+}
+h3.com_tail,
+.h3.com_tail {
+  @apply border border-black pl-4 pt-2 pb-2 pr-2 font-bold text-3xl;
+  box-shadow: 2px 2px 0 0 rgb(0, 0, 0);
+  // color: #424242;
+  &.with-margin {
+    @apply mt-12 mb-8;
+  }
+}
+h4.com_tail,
+.h4.com_tail {
+  @apply pl-4 py-2 text-xl font-bold relative;
+  border-bottom: dashed 1px #a0aec0;
+  // color: #424242;
+  &::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 60%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 60%;
+    border-top: solid 1.5rem #3182ce;
+  }
+  &.with-margin {
+    @apply mt-12 mb-8;
+  }
+}
+h5.com_tail,
+.h5.com_tail {
+  @apply pl-2 py-2 text-xl font-bold relative;
+  border-bottom: dashed 1px #a0aec0;
+  // color: #424242;
+  &.with-margin {
+    @apply mt-12 mb-8;
+  }
+}
+h6.com_tail,
+.h6.com_tail {
+  @apply text-xl font-bold;
+  // color: #424242;
+  &.with-margin {
+    @apply mt-12 mb-8;
+  }
+}

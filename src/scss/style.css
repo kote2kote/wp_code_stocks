@@ -1,0 +1,419 @@
+@charset "UTF-8";
+/*!
+Theme Name: wp_code_stocks
+Author: kote2
+Author URI: https://kote2.tokyo/
+Description: basic headless theme.
+Version: 2.0.0
+License: GNU General Public License v3 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+*/
+@import 'https://codepen.io/kote2kote/pen/bGWRWqG.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.v-color-theme {
+  color: #3072a6; }
+
+.v-color-font {
+  color: #000; }
+
+.v-color-subtext {
+  color: #adadad; }
+
+.v-bgcolor-theme {
+  background: #3072a6; }
+
+.v-bgcolor-title {
+  background: #f7f7f7; }
+
+@font-face {
+  font-display: swap;
+  font-family: 'Noto Sans JP';
+  font-weight: 100;
+  src: url("./assets/fonts/NotoSansJP-Thin.otf") format("opentype"); }
+
+@font-face {
+  font-display: swap;
+  font-family: 'Noto Sans JP';
+  font-weight: 300;
+  src: url("./assets/fonts/NotoSansJP-Light.otf") format("opentype"); }
+
+@font-face {
+  font-display: swap;
+  font-family: 'Noto Sans JP';
+  font-weight: 400;
+  src: url("./assets/fonts/NotoSansJP-Regular.otf") format("opentype"); }
+
+@font-face {
+  font-display: swap;
+  font-family: 'Noto Sans JP';
+  font-weight: 500;
+  src: url("./assets/fonts/NotoSansJP-Medium.otf") format("opentype"); }
+
+@font-face {
+  font-display: swap;
+  font-family: 'Noto Sans JP';
+  font-weight: 700;
+  src: url("./assets/fonts/NotoSansJP-Bold.otf") format("opentype"); }
+
+@font-face {
+  font-display: swap;
+  font-family: 'Noto Sans JP';
+  font-weight: 900;
+  src: url("./assets/fonts/NotoSansJP-Black.otf") format("opentype"); }
+
+.cm {
+  box-sizing: border-box;
+  background: repeating-linear-gradient(45deg, rgba(245, 245, 245, 0.1), rgba(245, 245, 245, 0.1) 10px, rgba(136, 136, 136, 0.2) 0, rgba(136, 136, 136, 0.2) 20px);
+  border: solid 1px rgba(68, 68, 68, 0.2); }
+
+.com_transition {
+  transition: all 0.3s ease; }
+
+.com_hover-action {
+  transition: all 0.2s ease; }
+  .com_hover-action:hover {
+    opacity: 0.7; }
+
+@media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE10 以降にのみ適用される */
+  .ie-block {
+    display: block; }
+  .ie-hidden {
+    display: none; } }
+
+.is-tb {
+  display: none; }
+  @media only screen and (min-width: 520px) {
+    .is-tb {
+      display: block; } }
+
+.is-maxtb {
+  display: none; }
+  @media only screen and (max-width: 519px) {
+    .is-maxtb {
+      display: block; } }
+
+.is-tbpc {
+  display: none; }
+  @media only screen and (min-width: 520px) and (max-width: 959px) {
+    .is-tbpc {
+      display: block; } }
+
+.is-pc {
+  display: none; }
+  @media only screen and (min-width: 960px) {
+    .is-pc {
+      display: block; } }
+
+.is-maxpc {
+  display: none; }
+  @media only screen and (max-width: 959px) {
+    .is-maxpc {
+      display: block; } }
+
+.is-sm {
+  display: none; }
+  @media only screen and (min-width: 640px) {
+    .is-sm {
+      display: block; } }
+
+.is-maxsm {
+  display: none; }
+  @media only screen and (max-width: 639px) {
+    .is-maxsm {
+      display: block; } }
+
+.is-smmd {
+  display: none; }
+  @media only screen and (min-width: 640px) and (max-width: 767px) {
+    .is-smmd {
+      display: block; } }
+
+.is-md {
+  display: none; }
+  @media only screen and (min-width: 768px) {
+    .is-md {
+      display: block; } }
+
+.is-maxmd {
+  display: none; }
+  @media only screen and (max-width: 767px) {
+    .is-maxmd {
+      display: block; } }
+
+.is-mdlg {
+  display: none; }
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .is-mdlg {
+      display: block; } }
+
+.is-lg {
+  display: none; }
+  @media only screen and (min-width: 1024px) {
+    .is-lg {
+      display: block; } }
+
+.is-maxlg {
+  display: none; }
+  @media only screen and (max-width: 1023px) {
+    .is-maxlg {
+      display: block; } }
+
+.is-lgxl {
+  display: none; }
+  @media only screen and (min-width: 1024px) and (max-width: 1279px) {
+    .is-lgxl {
+      display: block; } }
+
+.is-xl {
+  display: none; }
+  @media only screen and (min-width: 1280px) {
+    .is-xl {
+      display: block; } }
+
+.is-maxxl {
+  display: none; }
+  @media only screen and (max-width: 1279px) {
+    .is-maxxl {
+      display: block; } }
+
+.is-xlwide {
+  display: none; }
+  @media only screen and (min-width: 1280px) and (max-width: 1535px) {
+    .is-xlwide {
+      display: block; } }
+
+.is-maxwide {
+  display: none; }
+  @media only screen and (max-width: 1535px) {
+    .is-maxwide {
+      display: block; } }
+
+.is-wide {
+  display: none; }
+  @media only screen and (min-width: 1536px) {
+    .is-wide {
+      display: block; } }
+
+.is-print {
+  display: none; }
+  @media print {
+    .is-print {
+      display: block; } }
+
+.c-object-coverIE {
+  font-family: 'object-fit: cover;';
+  /* IE対策 */ }
+
+h2.com_tail,
+.h2.com_tail {
+  @apply flex flex-row items-center relative pl-4 pt-2 pb-2 pr-2 border-b-2 font-bold text-3xl; }
+  h2.com_tail.with-margin,
+  .h2.com_tail.with-margin {
+    @apply mt-12 mb-8; }
+
+h3.com_tail,
+.h3.com_tail {
+  @apply border border-black pl-4 pt-2 pb-2 pr-2 font-bold text-3xl;
+  box-shadow: 2px 2px 0 0 black; }
+  h3.com_tail.with-margin,
+  .h3.com_tail.with-margin {
+    @apply mt-12 mb-8; }
+
+h4.com_tail,
+.h4.com_tail {
+  @apply pl-4 py-2 text-xl font-bold relative;
+  border-bottom: dashed 1px #a0aec0; }
+  h4.com_tail::before,
+  .h4.com_tail::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 60%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 60%;
+    border-top: solid 1.5rem #3182ce; }
+  h4.com_tail.with-margin,
+  .h4.com_tail.with-margin {
+    @apply mt-12 mb-8; }
+
+h5.com_tail,
+.h5.com_tail {
+  @apply pl-2 py-2 text-xl font-bold relative;
+  border-bottom: dashed 1px #a0aec0; }
+  h5.com_tail.with-margin,
+  .h5.com_tail.with-margin {
+    @apply mt-12 mb-8; }
+
+h6.com_tail,
+.h6.com_tail {
+  @apply text-xl font-bold; }
+  h6.com_tail.with-margin,
+  .h6.com_tail.with-margin {
+    @apply mt-12 mb-8; }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+body {
+  font-weight: normal;
+  font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+  color: #000;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: 'liga', 'kern';
+  text-rendering: optimizeLegibility;
+  background: #fff no-repeat;
+  word-wrap: break-word;
+  font-size: 16; }
+
+p {
+  padding-bottom: 1rem; }
+
+.card-link:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+.aside a {
+  text-decoration: underline; }
+
+.aside .submenu-search-fieldset input {
+  background: #f2f3f5;
+  border: #bababa 1px solid; }
+  .aside .submenu-search-fieldset input::placeholder {
+    color: #b9b9b9;
+    letter-spacing: 1px; }
+
+.aside .submenu-search-fieldset button {
+  top: 0.8rem;
+  right: 1rem;
+  color: #8c9095; }
+  @media only screen and (min-width: 960px) {
+    .aside .submenu-search-fieldset button {
+      color: #10141a; } }
+
+.Pocari .Hero .area-arrow-left,
+.Pocari .Hero .area-arrow-right {
+  top: 50%;
+  transform: translateY(-50%); }
+
+.Pocari .Hero .area-activeSlider-btnCircle {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 22%; }
+  .Pocari .Hero .area-activeSlider-btnCircle li {
+    border-radius: 9999px;
+    padding-left: 1rem;
+    padding-right: 1rem; }
+
+.Pocari .Hero .area-nav {
+  bottom: 5%; }
+
+.Pocari .Hero .area-openNav ul.ul-first > li:first-of-type {
+  @apply py-2 pl-2 border border-b-0; }
+  .Pocari .Hero .area-openNav ul.ul-first > li:first-of-type > .outer {
+    @apply flex justify-between; }
+
+.Pocari .i-h-off {
+  height: 0vh; }
+
+.Pocari .i-h-on {
+  height: 20vh; }
+
+.Pocari .PickUp .area-mainSwiper > .inner {
+  @apply text-sm;
+  width: 100%; }
+  @media only screen and (min-width: 960px) {
+    .Pocari .PickUp .area-mainSwiper > .inner {
+      max-width: 948px; } }
+  .Pocari .PickUp .area-mainSwiper > .inner .swiper-button-next,
+  .Pocari .PickUp .area-mainSwiper > .inner .swiper-button-prev {
+    position: absolute;
+    top: 40%;
+    color: #000; }
+  .Pocari .PickUp .area-mainSwiper > .inner .swiper-button-next::after,
+  .Pocari .PickUp .area-mainSwiper > .inner .swiper-button-prev::after {
+    content: ''; }
+  .Pocari .PickUp .area-mainSwiper > .inner .swiper-button-prev::after,
+  .Pocari .PickUp .area-mainSwiper > .inner .swiper-button-next::after {
+    content: ''; }
+
+.Pocari .AboutScene > .inner {
+  height: 600px; }
+
+.Pocari .AboutScene .area-bg {
+  background: url("https://picsum.photos/1200/3000") no-repeat top center;
+  background-size: cover;
+  height: 3000px; }
+
+@media only screen and (min-width: 520px) {
+  .Pocari .AboutScene .area-tabs > .inner {
+    max-width: 1080px; } }
+
+.Pocari .AboutScene .area-tabs-tab {
+  height: 80px; }
+  .Pocari .AboutScene .area-tabs-tab .el-tabs-about.is-active .el-btn-off,
+  .Pocari .AboutScene .area-tabs-tab .el-tabs-scene.is-active .el-btn-off {
+    visibility: hidden; }
+
+.Pocari .AboutScene .area-tabs-main-about, .Pocari .AboutScene .area-tabs-main-scene {
+  animation: fade-out 0.3s forwards; }
+
+.Pocari .AboutScene .area-tabs-main-about.is-active, .Pocari .AboutScene .area-tabs-main-scene.is-active {
+  animation: fade-in 0.3s forwards; }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  0.1% {
+    display: block; }
+  100% {
+    opacity: 1;
+    display: block; } }
+
+@keyframes fade-out {
+  0% {
+    opacity: 1; }
+  0.1% {
+    display: none; }
+  100% {
+    opacity: 0;
+    display: none; } }
+
+@media only screen and (min-width: 520px) {
+  .Pocari .Footer .area-linkMenu {
+    min-width: 1080px; } }
+
+.Pocari .Footer .area-img {
+  min-height: 108px; }
+
+.Pocari .Footer .area-left ul,
+.Pocari .Footer .area-center ul,
+.Pocari .Footer .area-right ul {
+  @apply pt-6; }
+
+.Pocari .Footer .area-left li,
+.Pocari .Footer .area-center li,
+.Pocari .Footer .area-right li {
+  @apply relative pl-4 text-sm hover:underline; }
+  .Pocari .Footer .area-left li:not(last-child),
+  .Pocari .Footer .area-center li:not(last-child),
+  .Pocari .Footer .area-right li:not(last-child) {
+    @apply pb-4; }
+  .Pocari .Footer .area-left li:before,
+  .Pocari .Footer .area-center li:before,
+  .Pocari .Footer .area-right li:before {
+    content: '>';
+    position: absolute;
+    top: 0;
+    left: 0; }

@@ -1,0 +1,191 @@
+.Pocari {
+  // ==================================================
+  // Hero
+  // ==================================================
+  .Hero {
+    .area-arrow-left,
+    .area-arrow-right {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .area-activeSlider-btnCircle {
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 22%;
+      li {
+        border-radius: 9999px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+
+    .area-nav {
+      bottom: 5%;
+    }
+    .area-openNav {
+      // height: 70vh;
+      ul.ul-first > li:first-of-type {
+        @apply py-2 pl-2 border border-b-0;
+        > .outer {
+          @apply flex justify-between;
+        }
+      }
+    }
+  }
+  .i-h-off {
+    height: 0vh;
+  }
+  .i-h-on {
+    height: 20vh;
+  }
+
+  // ==================================================
+  // PickUp
+  // ==================================================
+  .PickUp {
+    .area-mainSwiper {
+      // タグ構造を矢印をcontainerの外に出す形に変更
+      // その歳、上階層にクラスを付与してクラスを設定
+      > .inner {
+        @apply text-sm;
+        width: 100%;
+        @include bp(pc) {
+          max-width: 948px;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+          position: absolute;
+          top: 40%;
+          color: #000;
+        }
+        // .swiper-button-next {
+        //   right: -2rem;
+        // }
+        // .swiper-button-prev {
+        //   left: -2rem;
+        // }
+
+        // これを入れるとデフォルトの矢印が消える
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+          content: '';
+        }
+        .swiper-button-prev::after,
+        .swiper-button-next::after {
+          content: '';
+        }
+      }
+    }
+  }
+
+  // ==================================================
+  // AboutScene
+  // ==================================================
+  .AboutScene {
+    > .inner {
+      height: 600px;
+    }
+    .area-bg {
+      background: url('https://picsum.photos/1200/3000') no-repeat top center;
+      background-size: cover;
+      height: 3000px;
+    }
+
+    .area-tabs {
+      > .inner {
+        @include bp(tb) {
+          max-width: 1080px;
+        }
+      }
+    }
+    .area-tabs-tab {
+      height: 80px;
+      // is-activeが付いてるタブをon状態
+      .el-tabs-about,
+      .el-tabs-scene {
+        &.is-active {
+          .el-btn-off {
+            visibility: hidden;
+          }
+        }
+      }
+    }
+
+    .area-tabs-main {
+      &-about,
+      &-scene {
+        animation: fade-out 0.3s forwards;
+      }
+      &-about.is-active,
+      &-scene.is-active {
+        animation: fade-in 0.3s forwards;
+      }
+    }
+
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      0.1% {
+        display: block;
+      }
+      100% {
+        opacity: 1;
+        display: block;
+      }
+    }
+    @keyframes fade-out {
+      0% {
+        opacity: 1;
+      }
+      0.1% {
+        // opacity: 0;
+        display: none;
+      }
+      100% {
+        opacity: 0;
+        display: none;
+      }
+    }
+  }
+
+  // ==================================================
+  // Footer
+  // ==================================================
+  .Footer {
+    .area-linkMenu {
+      @include bp(tb) {
+        min-width: 1080px;
+      }
+    }
+
+    .area-img {
+      min-height: 108px;
+    }
+
+    .area-left,
+    .area-center,
+    .area-right {
+      ul {
+        @apply pt-6;
+      }
+      li {
+        // position: relative;
+        // padding-left: 1rem;
+        // font-size: 2
+        @apply relative pl-4 text-sm hover:underline;
+        &:not(last-child) {
+          @apply pb-4;
+        }
+        &:before {
+          content: '>';
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+}

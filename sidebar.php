@@ -28,7 +28,7 @@
       </fieldset>
     </form>
   </div>
-<!-- 
+  <!-- 
   <div class="out_test-are-search">
     <div class="inner">
       <h5 class="com_tail">条件検索</h5>
@@ -91,5 +91,26 @@
 // <li id="menu-item-94" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-94"><a href="https://www.marugame-seimen.com/shop/">sss</a></li>
   ?>
     </ul>
+    <div class="vue_test01">
+      <ul>
+        <li v-for="n in jsonData" :key="n.id">
+          {{ n.name }}
+          <template v-if="n.children.length !== 0">
+            <ul class="ml-4">
+              <li v-for="nn in n.children" :key="nn.id">
+                {{ nn.name }}
+                <template v-if="nn.children.length !== 0">
+                  <ul class="ml-4">
+                    <li v-for="nnn in nn.children" :key="nnn.id">
+                      {{ nnn.name }}
+                    </li>
+                  </ul>
+                </template>
+              </li>
+            </ul>
+          </template>
+        </li>
+      </ul>
+    </div>
   </div>
 </aside>

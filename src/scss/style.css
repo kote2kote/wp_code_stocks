@@ -16,7 +16,7 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.html
   color: #3072a6; }
 
 .v-color-font {
-  color: #000; }
+  color: #fff; }
 
 .v-color-subtext {
   color: #adadad; }
@@ -26,6 +26,21 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 .v-bgcolor-title {
   background: #f7f7f7; }
+
+.bg-sidebar {
+  background: #005d72; }
+
+.bg-submenu {
+  background: #158098; }
+
+.font-anton {
+  font-family: 'Anton', sans-serif; }
+
+.h-top-screen {
+  height: 97vh; }
+
+.h-bottom-screen {
+  height: 3vh; }
 
 @font-face {
   font-display: swap;
@@ -263,18 +278,15 @@ h6.com_tail,
 body {
   font-weight: normal;
   font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  color: #000;
+  color: #fff;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -moz-font-feature-settings: 'liga', 'kern';
   text-rendering: optimizeLegibility;
-  background: #fff no-repeat;
+  background: #000 no-repeat;
   word-wrap: break-word;
   font-size: 16; }
-
-p {
-  padding-bottom: 1rem; }
 
 .card-link:before {
   content: '';

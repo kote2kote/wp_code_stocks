@@ -38,8 +38,8 @@ global $prod_url;
 global $is_dev;
 global $is_prod;
 $is_dev = $is_prod = false;
-$dev_url = 'http://localhost:10053'; // dev環境のURL 自由に変更してください
-$prod_url = 'https://test.kote2.co'; // prod環境のURL 自由に変更してください
+$dev_url = 'http://localhost:10058'; // dev環境のURL 自由に変更してください
+$prod_url = 'https://code-stocks.kote2.co'; // prod環境のURL 自由に変更してください
 
 // 現在の環境が本番環境/開発環境か判別フラグ作成
 if(home_url() === $dev_url) {
@@ -55,7 +55,7 @@ $is_prod = true;
 // default設定
 // --------------------------------------------------
 // ログイン時の管理バーを消す場合はコメントアウト
-// add_filter('show_admin_bar', '__return_false');
+add_filter('show_admin_bar', '__return_false');
 
 // PHPのメモリー上限の書き換え
 ini_set('memory_limit', '256M');
@@ -102,7 +102,8 @@ function wp_code_stocks_scripts() {
   $id = date("YmdHis"); ;
 
 	//CSS
-  // wp_enqueue_style( 'wp_code_stocks-animate', '//fonts.googleapis.com/css?family=Anton', array(), $id );
+  wp_enqueue_style( 'wp_code_stocks-animate', '//fonts.googleapis.com/css?family=Anton', array(), $id );
+  wp_enqueue_style( 'wp_code_stocks-fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), $id );
 	wp_enqueue_style( 'wp_code_stocks-style', get_stylesheet_uri(), array(), $id ); // style.css
 
   //JS

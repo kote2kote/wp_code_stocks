@@ -3,7 +3,7 @@
 // ==================================================
 
 // -- color --------------------
-$v-color-01: #000; // フォントカラー
+$v-color-01: #fff; // フォントカラー
 $v-color-02: #3072a6; // テーマカラー
 $v-color-03: #529bd3; // テーマカラーのマウスオーバー
 $v-color-04: #adadad; // サブテキスト
@@ -14,7 +14,7 @@ $v-color-08: #fff; // 未定
 $v-color-09: #fff; // 未定
 $v-color-10: #fff; // 未定
 $v-color-link: $v-color-03;
-$v-color-bg: $v-color-05;
+$v-color-bg: #000;
 $v-color-font: $v-color-01;
 
 .v-color-theme {
@@ -33,6 +33,21 @@ $v-color-font: $v-color-01;
   background: $v-color-06;
 }
 
+.bg-sidebar {
+  background: #005d72;
+}
+.bg-submenu {
+  background: #158098;
+}
+.font-anton {
+  font-family: 'Anton', sans-serif;
+}
+.h-top-screen {
+  height: 97vh;
+}
+.h-bottom-screen {
+  height: 3vh;
+}
 // -- font --------------------
 $v-font-sans-serif: 'Helvetica Neue', 'Helvetica', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
   'Arial', 'Yu Gothic', 'Meiryo', sans-serif;

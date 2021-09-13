@@ -8,109 +8,56 @@
  */
 ?>
 
-<aside class="aside px-4" style="width: 300px;">
-  <!-- 検索 -->
-  <div class="search">
-    <h5 class="com_tail">検索</h5>
-    <form method="get" action="<?php echo home_url('/'); ?>" class="pt-3">
-      <fieldset class="submenu-search-fieldset px-3 pb-8">
-        <label for="search" class="hidden">search</label>
-
-        <div class="relative">
-
-          <input type="text" name="s" class="appearance-none rounded-full w-full py-2 pl-4 pr-10 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="search word" />
-          <button type="submit" class="inline-block w-4 absolute">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
-            </svg>
-          </button>
-        </div>
-      </fieldset>
-    </form>
-  </div>
-  <!-- 
-  <div class="out_test-are-search">
-    <div class="inner">
-      <h5 class="com_tail">条件検索</h5>
-      <ul class="list-none">
-        <?php
-          // wp_list_categories();
-          // $args = array(
-          //   'show_option_all'    => '',
-          //   'orderby'            => 'name',
-          //   'order'              => 'ASC',
-          //   'style'              => 'list',
-          //   'show_count'         => 0,
-          //   'hide_empty'         => 1,
-          //   'use_desc_for_title' => 1,
-          //   'child_of'           => 0,
-          //   'feed'               => '',
-          //   'feed_type'          => '',
-          //   'feed_image'         => '',
-          //   'exclude'            => 1,2,
-          //   'exclude_tree'       => '',
-          //   'include'            => '',
-          //   'hierarchical'       => 1,
-          //   // 'title_li'           => ( 'Categories' ),
-          //   'title_li'           => (''),
-          //   'show_option_none'   => (''),
-          //   'number'             => null,
-          //   'echo'               => 1,
-          //   'depth'              => 0,
-          //   'current_category'   => 0,
-          //   'pad_counts'         => 0,
-          //   'taxonomy'           => 'category',
-          //   'walker'             => null
-          //     );
-          //     wp_list_categories( $args ); //
-
-					?>
-      </ul>
-    </div>
-  </div> -->
-
-  <!-- メニュー -->
-  <div class="menu">
-    <h5 class="com_tail">メニュー</h5>
+<aside class="aside flex h-top-screen overflow-hidden" style="width: 700px;">
+  <div class="out_l w-1/2 bg-submenu order-2 overflow-y-auto">
+    <h2 class="font-sm bg-black pl-2 font-anton">latest</h2>
     <ul>
-      <li><a href="/">トップページ</a></li>
+      <li v-for="n in postData" :key="n.id" @click="readCodepen(n.acf.cf_URL, n.tags, n.id)" class="cursor-pointer border-b border-gray-300 border-dashed py-3 px-2">
+        <span class="text-sm font-bold">{{ n.title.rendered }}</span>
+      </li>
     </ul>
-    <ul id="menu-mainmenu" class="menu">
-      <?php 
-    wp_nav_menu( array(
-      'theme_location'	=> 'mainmenu', // function.phpで設定したメニュー名を表示
-      'container'			=> false,
-      'items_wrap' => '%3$s' //ulを削除
-    ) );
-    
-// 展開例
-// <li id="menu-item-31" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-31"><a href="http://localhost:10048/category/cat01/">カテゴリ1</a></li>
-// <li id="menu-item-32" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32"><a href="http://localhost:10048/category/cat02/">カテゴリ2</a></li>
-// <li id="menu-item-81" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-81"><a href="http://localhost:10048/category/cat03/">カテゴリ3</a></li>
-// <li id="menu-item-82" class="menu-item menu-item-type-post_type menu-item-object-cpt menu-item-82"><a href="http://localhost:10048/cpt/testpage/">カスタム投稿タイプです</a></li>
-// <li id="menu-item-94" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-94"><a href="https://www.marugame-seimen.com/shop/">sss</a></li>
-  ?>
-    </ul>
-    <div class="vue_test01">
-      <ul>
-        <li v-for="n in jsonData" :key="n.id">
-          {{ n.name }}
-          <template v-if="n.children.length !== 0">
-            <ul class="ml-4">
-              <li v-for="nn in n.children" :key="nn.id">
-                {{ nn.name }}
-                <template v-if="nn.children.length !== 0">
-                  <ul class="ml-4">
-                    <li v-for="nnn in nn.children" :key="nnn.id">
-                      {{ nnn.name }}
-                    </li>
-                  </ul>
-                </template>
-              </li>
-            </ul>
-          </template>
-        </li>
-      </ul>
-    </div>
   </div>
+  <div class="out_r w-1/2 bg-sidebar order-1 overflow-y-auto">
+
+    <div class="prof bg-black">
+      <div class="font-anton py-2 text-center flex items-center justify-center text-xl">Code Stocks</div>
+      <div class="flex px-4 pb-4">
+        <div class=""><img class="rounded-full w-14" src="<?php bloginfo('template_directory'); ?>/assets/build/images/profile.jpg" alt=""></div>
+        <div class="pl-4">
+          <p class="text-xs">powered by kote2<br>frontend engineer</p>
+          <div class="text-center pt-1">
+            <a class="inline-block mr-1" href="https://twitter.com/kote2" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a class="inline-block ml-1" href="https://github.com/kote2kote" target="_blank"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- メニュー -->
+    <div class="menu">
+      <div class="inner pt-8 pl-12">
+        <ul class="text-sm">
+          <li v-for="n in restCatData" :key="n.id" class="py-1">
+            <i class="fas fa-chevron-right mr-2"></i><span @click="readPosts(n.id)" class="text-lg font-bold cursor-pointer">{{ n.name }}</span>
+            <template v-if="n.children.length !== 0">
+              <ul class="ml-6">
+                <li v-for="nn in n.children" :key="nn.id" class="py-1">
+                  <span @click="readPosts(nn.id)" class="cursor-pointer">{{ nn.name }}</span>
+                  <template v-if="nn.children.length !== 0">
+                    <ul class="ml-4">
+                      <li v-for="nnn in nn.children" :key="nnn.id" class="py-1">
+                        <span @click="readPosts(nnn.id)" class="cursor-pointer">{{ nnn.name }}</span>
+                      </li>
+                    </ul>
+                  </template>
+                </li>
+              </ul>
+            </template>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
 </aside>

@@ -33,7 +33,7 @@ global $is_prod;
   <div class='inner fixed right-0 bg-red-600 text-white p-2 font-bold'>dev</div>
   <?php }?>
 
-  <div class="vue_app h-top-screen inner flex flex-col justify-between">
+  <div class="vue_app com_h-pageTop inner flex flex-col justify-between">
 
     <?php if( is_user_logged_in() ) : ?>
     <div ref="loginChecker" class="hidden">ログインチェッカー</div>
@@ -41,6 +41,7 @@ global $is_prod;
 
     <div class="flex flex-grow">
 
-      <?php 
-	get_sidebar();
-	?>
+      <?php
+			// 左サイドバーの場合はコメントアウト
+    	get_sidebar();
+			?>

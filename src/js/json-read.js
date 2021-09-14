@@ -1,26 +1,40 @@
 // ==================================================
-// json-read.js
+// setting
+// ==================================================
+const locationURL = window.location.origin;
+let isProd = false;
+
+// 開発環境か本番環境か
+if (locationURL.indexOf('localhost') === -1) {
+  isProd = true; // 本番環境
+}
+
+// 管理画面にログインしていない場合に表示しないカテゴリid
+const excludeCategory = isProd ? '4+9+43+52' : '26+29+28+13'; // 左:本番、右:開発
+
+// ==================================================
+// main script
 // ==================================================
 
-// -- restAPI用 -------------- //
 const jsonRead = Vue.createApp({
   data() {
     return {
       restCatURL: '',
       restCatData: [],
       postData: [],
-      embedURL: { id: '', user: '', url: '', postId: '', locationURL: window.location.origin },
+      embedURL: { id: '', user: '', url: '', postId: '', locationURL: locationURL },
       isNote: false,
     };
   },
   mounted() {
     if (this.$refs.loginChecker) {
-      console.log('login now');
-      this.restCatURL = `${window.location.origin}/wp-json/wp/v2/categories?_embed&per_page=100&exclude=1`;
+      // 管理画面にログインしている場合
+      this.restCatURL = `${locationURL}/wp-json/wp/v2/categories?_embed&per_page=100&exclude=1`;
     } else {
-      console.log('logout now');
-      this.restCatURL = `${window.location.origin}/wp-json/wp/v2/categories?_embed&per_page=100&exclude=1+26+29+28+13`;
+      // 管理画面にログインしていない場合
+      this.restCatURL = `${locationURL}/wp-json/wp/v2/categories?_embed&per_page=100&exclude=1+${excludeCategory}`;
     }
+    console.log(this.restCatURL);
     this.init();
   },
   methods: {
@@ -56,7 +70,7 @@ const jsonRead = Vue.createApp({
     },
     async readPosts(id) {
       try {
-        const url = `${this.embedURL.locationURL}/wp-json/wp/v2/posts?_embed&per_page=100&page=1&categories=${id}`;
+        const url = `${locationURL}/wp-json/wp/v2/posts?_embed&per_page=100&page=1&categories=${id}`;
         const res = await fetch(new URL(url));
         const data = await res.json();
         if (data.length > 0) {
@@ -69,7 +83,7 @@ const jsonRead = Vue.createApp({
         console.log(`Error! HTTP Status: ${status} ${statusText}`);
       }
     },
-    async readCodepen(url, tags, postId) {
+    async readPage(url, tags, postId) {
       console.log(postId);
       if (url) {
         if (url.indexOf('codepen') !== -1) {
@@ -79,7 +93,7 @@ const jsonRead = Vue.createApp({
           this.embedURL.user = url.match(/io\/(.*)\/pen/)[1];
           this.embedURL.url = url;
           this.embedURL.postId = postId;
-          this.embedURL.locationURL = window.location.origin;
+          this.embedURL.locationURL = locationURL;
           if (tags !== false) {
             for (const n of tags) {
               if (n.slug === 'note') {
@@ -91,12 +105,8 @@ const jsonRead = Vue.createApp({
           this.embedURL = { id: '', user: '', url: '', postId: '', locationURL: '' };
           this.embedURL.url = url;
           this.embedURL.postId = postId;
-          this.embedURL.locationURL = window.location.origin;
+          this.embedURL.locationURL = locationURL;
         }
-
-        // this.iframeURL = url;
-        // console.log(url.match(/io\/(.*)\/pen/)[1]);
-        // console.log(url.match(/pen\/(.*)/)[1]);
       }
     },
   },

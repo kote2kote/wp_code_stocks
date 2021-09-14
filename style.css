@@ -879,34 +879,13 @@ video {
 	transition-duration: 500ms;
 }
 .v-color-theme {
-  color: #3072a6; }
+  color: #005d72; }
+
+.v-bgcolor-theme {
+  background: #005d72; }
 
 .v-color-font {
   color: #fff; }
-
-.v-color-subtext {
-  color: #adadad; }
-
-.v-bgcolor-theme {
-  background: #3072a6; }
-
-.v-bgcolor-title {
-  background: #f7f7f7; }
-
-.bg-sidebar {
-  background: #005d72; }
-
-.bg-submenu {
-  background: #158098; }
-
-.font-anton {
-  font-family: 'Anton', sans-serif; }
-
-.h-top-screen {
-  height: 97vh; }
-
-.h-bottom-screen {
-  height: 3vh; }
 
 @font-face {
   font-display: swap;
@@ -943,6 +922,24 @@ video {
   font-family: 'Noto Sans JP';
   font-weight: 900;
   src: url("./assets/fonts/NotoSansJP-Black.otf") format("opentype"); }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+body {
+  font-weight: normal;
+  font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+  color: #fff;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: 'liga', 'kern';
+  text-rendering: optimizeLegibility;
+  background: #000 no-repeat;
+  word-wrap: break-word;
+  font-size: 16; }
 
 .cm {
   box-sizing: border-box;
@@ -1184,23 +1181,20 @@ h6.com_tail, .h6.com_tail{
 	margin-bottom: 2rem;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box; }
+.com_bg-sidebar {
+  background: #005d72; }
 
-body {
-  font-weight: normal;
-  font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  color: #fff;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -moz-font-feature-settings: 'liga', 'kern';
-  text-rendering: optimizeLegibility;
-  background: #000 no-repeat;
-  word-wrap: break-word;
-  font-size: 16; }
+.com_bg-submenu {
+  background: #158098; }
+
+.com_h-pageTop {
+  height: 97vh; }
+
+.com_h-pageBottom {
+  height: 3vh; }
+
+.com_font-anton {
+  font-family: 'Anton', sans-serif; }
 
 .card-link:before {
   content: '';

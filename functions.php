@@ -91,7 +91,7 @@ add_theme_support('widgets'); // ウィジェットの追加
 //   session_start();
 // });
 
-
+remove_filter('pre_user_description', 'wp_filter_kses');
 // --------------------------------------------------
 // 共通js/css
 // --------------------------------------------------

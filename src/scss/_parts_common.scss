@@ -1,34 +1,19 @@
 // ==================================================
-// head common
+// parts common
 // ==================================================
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-body {
-  font-weight: normal;
-  font-family: $v-font;
-  // font-weight: 900;
-  // font-family: 'Noto Sans JP', sans-serif;
-  color: $v-color-font;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -moz-font-feature-settings: 'liga', 'kern';
-  text-rendering: optimizeLegibility;
-  background: $v-color-bg no-repeat;
-  word-wrap: break-word;
-  font-size: $v-font-size-default;
-}
 
-// a {
-//   transition: all 0.3s ease;
-//   &:hover {
-//     color: $v-color-link;
-//   }
-// }
-
-// p {
-//   padding-bottom: 1rem;
-// }
+.com_bg-sidebar {
+  background: $v-color-02;
+}
+.com_bg-submenu {
+  background: $v-color-03;
+}
+.com_h-pageTop {
+  height: 97vh;
+}
+.com_h-pageBottom {
+  height: 3vh;
+}
+.com_font-anton {
+  font-family: 'Anton', sans-serif;
+}

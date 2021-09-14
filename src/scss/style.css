@@ -2,9 +2,9 @@
 /*!
 Theme Name: wp_code_stocks
 Author: kote2
-Author URI: https://kote2.tokyo/
-Description: basic headless theme.
-Version: 2.0.0
+Author URI: https://twitter.com/kote2
+Description: codepenを表示する事に特化したwordpressテーマです
+Version: 1.0.0
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 */
@@ -281,6 +281,9 @@ h6.com_tail,
 
 .com_font-anton {
   font-family: 'Anton', sans-serif; }
+
+.out_avatar .avatar {
+  @apply rounded-full; }
 
 .card-link:before {
   content: '';

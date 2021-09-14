@@ -1,17 +1,3 @@
-/**
- *   Gulp with TailwindCSS - An CSS Utility framework
- *   Author : Manjunath G
- *   URL : manjumjn.com | lazymozek.com
- *   Twitter : twitter.com/manju_mjn
- **/
-
-/*
-  Usage:
-  1. npm install //To install all dev dependencies of package
-  2. npm run dev //To start development and server for live preview
-  3. npm run prod //To generate minifed files for live server
-*/
-
 const { src, dest, task, watch, series, parallel } = require('gulp');
 const del = require('del'); //For Cleaning build/dist for fresh export
 const options = require('./config'); //paths and other options from config.js
@@ -26,10 +12,6 @@ const cleanCSS = require('gulp-clean-css'); //To Minify CSS files
 const purgecss = require('gulp-purgecss'); // Remove Unused CSS from Styles
 const imageResize = require('gulp-image-resize');
 const rename = require('gulp-rename');
-
-//Note : Webp still not supported in major browsers including forefox
-//const webp = require('gulp-webp'); //For converting images to WebP format
-//const replace = require('gulp-replace'); //For Replacing img formats to webp in html
 const logSymbols = require('log-symbols'); //For Symbolic Console logs :) :P
 
 //Load Previews on Browser on dev
@@ -43,31 +25,6 @@ function livePreview(done) {
   });
   done();
 }
-
-// function livePreview(done) {
-//   phpServer.server(
-//     {
-//       base: options.paths.root,
-//       port: options.config.port || 5000,
-//       open: false,
-//       bin: '/Applications/MAMP/bin/php/php7.2.8/bin/php',
-//       ini: '/Applications/MAMP/bin/php/php7.2.8/conf/php.ini',
-//     }
-
-//     // function () {
-//     //   browserSync.init({
-//     //     // server: {
-//     //     //   baseDir: options.paths.root,
-//     //     // },
-//     //     // port: options.config.port || 5000,
-//     //     baseDir: 'http://localhost:10028/',
-//     //     proxy: '127.0.0.1:5010',
-//     //   });
-//     // }
-//   );
-//   browserSync.reload();
-//   done();
-// }
 
 function icon(done) {
   for (let icon of options.icons) {
@@ -168,29 +125,6 @@ function prodStyles() {
     .pipe(cleanCSS({ compatibility: 'ie8' }))
     .pipe(dest(options.paths.build.css));
 }
-
-// function prodStyles() {
-//   const tailwindcss = require('tailwindcss');
-//   return src(`${options.paths.src.css}/**/*.scss`)
-//     .pipe(sass().on('error', sass.logError))
-//     .pipe(postcss([tailwindcss(options.config.tailwindjs), require('autoprefixer')]))
-//     .pipe(
-//       // purgecss({
-//       //   content: ['./**/*.{html,php}'],
-//       //   defaultExtractor: (content) => {
-//       //     const broadMatches = content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [];
-//       //     const innerMatches = content.match(/[^<>"'`\s.()]*[^<>"'`\s.():]/g) || [];
-//       //     return broadMatches.concat(innerMatches);
-//       //   },
-//       // })
-//       purgecss({
-//         content: ['./**/*.php'],
-//         defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
-//       })
-//     )
-//     .pipe(cleanCSS({ compatibility: 'ie8' }))
-//     .pipe(dest(options.paths.build.css));
-// }
 
 function prodScripts() {
   return src([`${options.paths.src.js}/libs/**/*.js`, `${options.paths.src.js}/**/*.js`])

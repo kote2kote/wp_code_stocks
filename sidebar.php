@@ -10,7 +10,7 @@
 
 <aside class="aside flex h-top-screen overflow-hidden" style="width: 700px;">
 
-  <!-- サブメニュー 左サイドバーの場合はout_rにorder-2を入れる。右の場合は削除 -->
+  <!-- サブメニュー 左サイドバーの場合はout_rにorder-2を入れる。右サイドバーの場合は削除 -->
   <div class="out_l w-1/2 overflow-y-auto com_bg-submenu order-2">
     <h2 class="font-sm bg-black pl-2 com_font-anton">items</h2>
     <ul>
@@ -20,14 +20,14 @@
     </ul>
   </div>
 
-  <!-- メインサイドバー 左サイドバーの場合はout_rにorder-1を入れる。右の場合は削除-->
+  <!-- メインサイドバー 左サイドバーの場合はout_rにorder-1を入れる。右サイドバーの場合は削除-->
   <div class="out_r w-1/2 overflow-y-auto com_bg-sidebar order-1">
 
     <div class="prof bg-black">
       <div class="com_font-anton py-2 text-center flex items-center justify-center text-xl"><?php bloginfo( 'name' ); ?></div>
       <div class="flex px-4 pb-4">
         <!-- プロフ写真 -->
-        <div class=""><img class="rounded-full w-14" src="https://secure.gravatar.com/avatar/c64041df9e3238269c5e17395331d167" alt=""></div>
+        <div class="out_avatar"><?php echo get_avatar( 1, 60 ); ?></div>
         <div class="pl-4">
           <!-- プロフ説明 -->
           <p class="text-xs"><?php the_author_meta('user_description',1); ?></p>

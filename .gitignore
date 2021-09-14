@@ -1,4 +1,7 @@
 node_modules
-dist
-build
-src/css/*.css
+.vscode
+_config.yml
+test
+src/js/debug.js
+src/js/responsive.js
+src/js/test_json-read.js

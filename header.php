@@ -28,20 +28,16 @@ global $is_prod;
 
 <body <?php body_class('js_body'); ?>>
 
-  <?php if($is_dev) {get_template_part('debug');} ?>
-  <?php if($is_dev) {?>
-  <div class='inner fixed right-0 bg-red-600 text-white p-2 font-bold'>dev</div>
-  <?php }?>
-
   <div class="vue_app com_h-pageTop inner flex flex-col justify-between">
 
     <?php if( is_user_logged_in() ) : ?>
-    <div ref="loginChecker" class="hidden">ログインチェッカー</div>
+    <!-- WPの管理画面にログインしているならrefを表示。vueで取得してログイン状態をvueに渡す -->
+    <div ref="loginChecker" class="hidden">ログイン中</div>
     <?php endif; ?>
 
     <div class="flex flex-grow">
 
       <?php
-			// 左サイドバーの場合はコメントアウト
+			// 左サイドバーの場合はアンコメント
     	get_sidebar();
 			?>

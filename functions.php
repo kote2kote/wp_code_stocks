@@ -5,9 +5,6 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package wp_code_stocks
- * 
- * 210813 スースコード整理
- * 210807 テスト
  */
 
 // --------------------------------------------------
@@ -30,7 +27,7 @@ add_action( 'rest_api_init', 'my_customize_rest_cors', 15 );
 // --------------------------------------------------
 // 記事データ作成用
 $exclude_catid = [1]; // 除外カテゴリID
-$no_images_url = 'https://kote2tokyo.kote2.co/wp-content/uploads/2019/05/test.png';
+$no_images_url = 'https://via.placeholder.com/1024x768/27709b/ffffff?text=no-images';//画像なし時のURL
 
 // 本番/開発環境判別用
 global $dev_url;

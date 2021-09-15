@@ -9,9 +9,6 @@
  * @package wp_code_stocks
  */
 
-global $is_dev;
-global $is_prod;
-
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -19,6 +16,7 @@ global $is_prod;
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.1/tailwind.min.css">
   <?php wp_head(); ?>
   <!--[if lt IE 9]>
   	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -26,18 +24,7 @@ global $is_prod;
   <![endif]-->
 </head>
 
-<body <?php body_class('js_body'); ?> class="overflow-hidden">
+<body <?php body_class('js_body'); ?>>
 
-  <div class="vue_app com_h-pageTop inner flex flex-col justify-between">
-
-    <?php if( is_user_logged_in() ) : ?>
-    <!-- WPの管理画面にログインしているならrefを表示。vueで取得してログイン状態をvueに渡す -->
-    <div ref="loginChecker" class="hidden">ログイン中</div>
-    <?php endif; ?>
-
-    <div class="flex flex-grow">
-
-      <?php
-			// 右サイドバーの場合はアンコメント
-    	get_sidebar();
-			?>
+  <div class="inner min-h-screen flex flex-col justify-between text-black bg-white">
+    <div class="">

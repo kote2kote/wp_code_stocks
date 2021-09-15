@@ -30,7 +30,8 @@ if (locationURL.indexOf('localhost') === -1) {
 }
 
 // 管理画面にログインしていない場合に表示しないカテゴリid
-const excludeCategory = isProd ? '4+9+43+52' : '26+29+28+13'; // 左:本番、右:開発
+// const excludeCategory = isProd ? '4+9+43+52+53' : '26+29+28+13+54'; // 左:本番、右:開発
+const excludeCategory = isProd ? '' : ''; // 左:本番、右:開発
 
 // ==================================================
 // main script
@@ -96,7 +97,7 @@ const jsonRead = Vue.createApp({
         if (data.length > 0) {
           this.postData = []; // 初期化
           this.postData = data;
-          // console.log(data[0].acf.cf_codepenURL);
+          console.log(data);
         }
       } catch (e) {
         const { status, statusText } = error.response;

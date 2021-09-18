@@ -20,3 +20,16 @@
 .out_avatar .avatar {
   @apply rounded-full;
 }
+
+body.single {
+  p {
+    padding-bottom: 1rem;
+  }
+}
+
+// サイドバー目次のデザイン上書き設定
+// http://blog.appspace.jp/wordpress/how-to-install-tableofcontentsplus/#i-17
+#toc_container {
+  @apply fixed right-0 bg-gray-100;
+  top: 4.3rem;
+}

@@ -17,14 +17,19 @@ get_header();
 ?>
 <main class="main w-full">
   <div class="inner h-full">
+    <?php if( is_user_logged_in() ) {?>
     <template v-if="embedURL.id && embedURL.user">
       <!-- editable=trueを入れると編集可能になるがリソースを食うのでやめておく -->
       <!-- <iframe v-if="isNote" height="100%" style="width: 100%;" scrolling="no" :src="`https://codepen.io/${embedURL.user}/embed/${embedURL.id}?default-tab=js&editable=true`" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe> -->
       <iframe height="100%" style="width: 100%;" scrolling="no" :src="`https://codepen.io/${embedURL.user}/embed/${embedURL.id}?default-tab=html%2Cresult&editable=true`" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
     </template>
-    <template v-else>
+    <template v-else-if="embedURL.url">
       <iframe height="100%" style="width: 100%;" :src="`${embedURL.url}`" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
     </template>
+    <template v-else>
+      <iframe height="100%" style="width: 100%;" :src="`${embedURL.link}`" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
+    </template>
+    <?php } ?>
   </div>
 </main>
 <?php

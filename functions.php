@@ -160,37 +160,37 @@ register_nav_menus( array(
 function editRestAPI( $data ) {
   $data->data['tags'] = get_the_tags(); // タグ
   $data->data['categories'] = get_the_category(); // カテゴリ
-  $data->data['prev'] = getPreviousPost(); // 前の記事
-  $data->data['next'] = getNextPost(); // 次の記事
+  // $data->data['prev'] = getPreviousPost(); // 前の記事
+  // $data->data['next'] = getNextPost(); // 次の記事
   return $data;
 }
 add_filter( 'rest_prepare_post', 'editRestAPI', 10, 3 );
 
-// -- 前の記事 --------------------
-function getPreviousPost() {
-  $prev = get_previous_post($excluded_terms = $exclude_catid); // カテゴリid:1(未定義)を除外
-  // 前の記事がない場合
-  if(empty($prev)) { 
-    $prev = []; // 空に
-  } else {
-    // サムネイルURLを追加
-    $prev->featured_image_src = get_the_post_thumbnail_url($prev->ID);
-  }
+// // -- 前の記事 --------------------
+// function getPreviousPost() {
+//   $prev = get_previous_post($excluded_terms = $exclude_catid); // カテゴリid:1(未定義)を除外
+//   // 前の記事がない場合
+//   if(empty($prev)) { 
+//     $prev = []; // 空に
+//   } else {
+//     // サムネイルURLを追加
+//     $prev->featured_image_src = get_the_post_thumbnail_url($prev->ID);
+//   }
 
-  return $prev;
-}
+//   return $prev;
+// }
 
-// -- 次の記事 --------------------
-function getNextPost() {
-  $next = get_next_post($excluded_terms = $exclude_catid);
-  if(empty($next)) {
-    $next = [];
-  } else {
-    $next->featured_image_src = get_the_post_thumbnail_url($next->ID);
-  }
+// // -- 次の記事 --------------------
+// function getNextPost() {
+//   $next = get_next_post($excluded_terms = $exclude_catid);
+//   if(empty($next)) {
+//     $next = [];
+//   } else {
+//     $next->featured_image_src = get_the_post_thumbnail_url($next->ID);
+//   }
 
-  return $next;
-}
+//   return $next;
+// }
 
 // --------------------------------------------------
 // Rest APIにサムネイル追加'featured_image'エンドポイント作成

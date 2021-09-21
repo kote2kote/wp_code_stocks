@@ -7,8 +7,6 @@ Code Stocks テーマは、プライベートでの使用を目的とし、自�
 
 <p align="center"><img align="center" style="width:320px" src="https://files.kote2.co/tmp/cs/ss.png"/></p>
 
-<a href="https://sample-cs.kote2.co/" target="_blank">sample page</a>.
-
 ## 使い方
 
 wordpress のテーマファイルとしてお使いください。wordpress のインストールについては公式サイトをご参考ください
@@ -35,10 +33,10 @@ import-latest.xml
 
 ### ユーザー情報表示箇所
 
-・サイト名
-・ユーザー説明
-・ユーザーアバター
-を使用しています。
+- サイト名
+- ユーザー説明
+- ユーザーアバター
+  を使用しています。ソーシャルアイコンは私のものが入ってますので差し替えて構いません。(というかプライベートならいらない？？)
 
 ### サイドバー左右入れ替え
 
@@ -49,6 +47,10 @@ buils/js/scripts.js
 ```
 isSidebarLeft:  true // falseに変更
 ```
+
+## プライベートではなく公開用に使いたい場合
+
+php ソース内の is_user_logged_in()でくくってる部分をコメントアウトすれば表示されます。ただ、目的外なので不具合が出るかもしれませんので、そこは自己責任でお願いします。さらには SEO 対策レスポンシブ対応は一切行っていません。URL も基本的に一つですのでご了承ください。
 
 last update 210921
 update 210914

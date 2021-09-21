@@ -3,7 +3,7 @@
 ### 管理画面ログインで使用するテーマです
 
 Code Stocks テーマは、プライベートでの使用を目的とし、自分専用のノートに利用できます。また Code Stocks という名前の通り、プログラミングのコードを集めるような作りに特化しているのも特徴です。
-具体的には、Codepen や CodeSandbox などを iframe 表示する事により、同じ画面内でソースコードを参照できます。詳しくは<a href="https://sample-cs.kote2.co/" target="_blank">サンプルサイト</a>をご覧ください。
+具体的には、Codepen や CodeSandbox などを iframe 表示する事により、同じ画面内でソースコードを参照できます。詳しくは<a href="https://sample-cs.kote2.co/" target="_blank">サンプルサイト</a>をご覧ください。(初回で表示される start.me はスタートページを作れるサービスです。便利なので利用していますが、自由に変更できます)
 
 <p align="center"><img align="center" style="width:320px" src="https://files.kote2.co/tmp/cs/ss.png"/></p>
 

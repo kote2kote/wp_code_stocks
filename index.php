@@ -29,7 +29,8 @@ get_header();
     <template v-else>
       <iframe height="100%" style="width: 100%;" :src="`${embedURL.link}`" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
     </template>
-    <?php } ?>
+    <?php }  ?>
+
   </div>
 </main>
 <?php

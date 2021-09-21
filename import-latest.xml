@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/5.8.1" created="2021-09-14 12:13" -->
+	<!-- generator="WordPress/5.8.1" created="2021-09-21 08:51" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -26,122 +26,238 @@
 >
 
 <channel>
-	<title>test-code-stocks</title>
-	<link>http://localhost:10063</link>
+	<title>Blog name</title>
+	<link>https://sample-cs.kote2.co</link>
 	<description>Just another WordPress site</description>
-	<pubDate>Tue, 14 Sep 2021 12:13:13 +0000</pubDate>
+	<pubDate>Tue, 21 Sep 2021 08:51:56 +0000</pubDate>
 	<language>ja</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
-	<wp:base_site_url>http://localhost:10063</wp:base_site_url>
-	<wp:base_blog_url>http://localhost:10063</wp:base_blog_url>
+	<wp:base_site_url>https://sample-cs.kote2.co</wp:base_site_url>
+	<wp:base_blog_url>https://sample-cs.kote2.co</wp:base_blog_url>
 
-		<wp:author><wp:author_id>1</wp:author_id><wp:author_login><![CDATA[kote2]]></wp:author_login><wp:author_email><![CDATA[dev-email@flywheel.local]]></wp:author_email><wp:author_display_name><![CDATA[kote2]]></wp:author_display_name><wp:author_first_name><![CDATA[]]></wp:author_first_name><wp:author_last_name><![CDATA[]]></wp:author_last_name></wp:author>
+		<wp:author><wp:author_id>1</wp:author_id><wp:author_login><![CDATA[kote2]]></wp:author_login><wp:author_email><![CDATA[kote2kote2@gmail.com]]></wp:author_email><wp:author_display_name><![CDATA[kote2]]></wp:author_display_name><wp:author_first_name><![CDATA[]]></wp:author_first_name><wp:author_last_name><![CDATA[]]></wp:author_last_name></wp:author>
 
+		<wp:category>
+		<wp:term_id>9</wp:term_id>
+		<wp:category_nicename><![CDATA[manual]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[Manual]]></wp:cat_name>
+	</wp:category>
+		<wp:category>
+		<wp:term_id>10</wp:term_id>
+		<wp:category_nicename><![CDATA[floor01]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[manual]]></wp:category_parent>
+		<wp:cat_name><![CDATA[階層は第一階層]]></wp:cat_name>
+	</wp:category>
+		<wp:category>
+		<wp:term_id>11</wp:term_id>
+		<wp:category_nicename><![CDATA[floor0%ef%bc%92]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[floor01]]></wp:category_parent>
+		<wp:cat_name><![CDATA[第二階層]]></wp:cat_name>
+	</wp:category>
+		<wp:category>
+		<wp:term_id>12</wp:term_id>
+		<wp:category_nicename><![CDATA[floor03]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[floor0%ef%bc%92]]></wp:category_parent>
+		<wp:cat_name><![CDATA[第三階層まで]]></wp:cat_name>
+	</wp:category>
+		<wp:category>
+		<wp:term_id>13</wp:term_id>
+		<wp:category_nicename><![CDATA[about-post]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[manual]]></wp:category_parent>
+		<wp:cat_name><![CDATA[記事投稿の種類]]></wp:cat_name>
+	</wp:category>
+		<wp:category>
+		<wp:term_id>2</wp:term_id>
+		<wp:category_nicename><![CDATA[works]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[Works(sample)]]></wp:cat_name>
+	</wp:category>
+		<wp:category>
+		<wp:term_id>4</wp:term_id>
+		<wp:category_nicename><![CDATA[works-2021]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[works]]></wp:category_parent>
+		<wp:cat_name><![CDATA[2021年度]]></wp:cat_name>
+	</wp:category>
+		<wp:category>
+		<wp:term_id>5</wp:term_id>
+		<wp:category_nicename><![CDATA[memo]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[works-2021]]></wp:category_parent>
+		<wp:cat_name><![CDATA[議事メモ]]></wp:cat_name>
+	</wp:category>
+		<wp:category>
+		<wp:term_id>3</wp:term_id>
+		<wp:category_nicename><![CDATA[private]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[Private(sample)]]></wp:cat_name>
+	</wp:category>
+		<wp:category>
+		<wp:term_id>6</wp:term_id>
+		<wp:category_nicename><![CDATA[recipe]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[private]]></wp:category_parent>
+		<wp:cat_name><![CDATA[レシピ]]></wp:cat_name>
+	</wp:category>
+		<wp:category>
+		<wp:term_id>8</wp:term_id>
+		<wp:category_nicename><![CDATA[japanese-food]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[recipe]]></wp:category_parent>
+		<wp:cat_name><![CDATA[和食]]></wp:cat_name>
+	</wp:category>
+		<wp:category>
+		<wp:term_id>7</wp:term_id>
+		<wp:category_nicename><![CDATA[spicy]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[recipe]]></wp:category_parent>
+		<wp:cat_name><![CDATA[スパイシー]]></wp:cat_name>
+	</wp:category>
 		<wp:category>
 		<wp:term_id>1</wp:term_id>
 		<wp:category_nicename><![CDATA[uncategorized]]></wp:category_nicename>
 		<wp:category_parent><![CDATA[]]></wp:category_parent>
-		<wp:cat_name><![CDATA[Uncategorized]]></wp:cat_name>
+		<wp:cat_name><![CDATA[未分類]]></wp:cat_name>
 	</wp:category>
-		<wp:category>
+			<wp:tag>
+		<wp:term_id>14</wp:term_id>
+		<wp:tag_slug><![CDATA[note]]></wp:tag_slug>
+		<wp:tag_name><![CDATA[note]]></wp:tag_name>
+	</wp:tag>
+			<wp:term>
+		<wp:term_id>9</wp:term_id>
+		<wp:term_taxonomy><![CDATA[category]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[manual]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[Manual]]></wp:term_name>
+	</wp:term>
+		<wp:term>
+		<wp:term_id>14</wp:term_id>
+		<wp:term_taxonomy><![CDATA[post_tag]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[note]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[note]]></wp:term_name>
+	</wp:term>
+		<wp:term>
+		<wp:term_id>10</wp:term_id>
+		<wp:term_taxonomy><![CDATA[category]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[floor01]]></wp:term_slug>
+		<wp:term_parent><![CDATA[manual]]></wp:term_parent>
+		<wp:term_name><![CDATA[階層は第一階層]]></wp:term_name>
+	</wp:term>
+		<wp:term>
+		<wp:term_id>11</wp:term_id>
+		<wp:term_taxonomy><![CDATA[category]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[floor0%ef%bc%92]]></wp:term_slug>
+		<wp:term_parent><![CDATA[floor01]]></wp:term_parent>
+		<wp:term_name><![CDATA[第二階層]]></wp:term_name>
+	</wp:term>
+		<wp:term>
+		<wp:term_id>12</wp:term_id>
+		<wp:term_taxonomy><![CDATA[category]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[floor03]]></wp:term_slug>
+		<wp:term_parent><![CDATA[floor0%ef%bc%92]]></wp:term_parent>
+		<wp:term_name><![CDATA[第三階層まで]]></wp:term_name>
+	</wp:term>
+		<wp:term>
+		<wp:term_id>13</wp:term_id>
+		<wp:term_taxonomy><![CDATA[category]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[about-post]]></wp:term_slug>
+		<wp:term_parent><![CDATA[manual]]></wp:term_parent>
+		<wp:term_name><![CDATA[記事投稿の種類]]></wp:term_name>
+	</wp:term>
+		<wp:term>
 		<wp:term_id>2</wp:term_id>
-		<wp:category_nicename><![CDATA[test1]]></wp:category_nicename>
-		<wp:category_parent><![CDATA[]]></wp:category_parent>
-		<wp:cat_name><![CDATA[第一カテゴリ]]></wp:cat_name>
-	</wp:category>
-		<wp:category>
-		<wp:term_id>3</wp:term_id>
-		<wp:category_nicename><![CDATA[test2]]></wp:category_nicename>
-		<wp:category_parent><![CDATA[test1]]></wp:category_parent>
-		<wp:cat_name><![CDATA[第二カテゴリ]]></wp:cat_name>
-	</wp:category>
-		<wp:category>
+		<wp:term_taxonomy><![CDATA[category]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[works]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[Works(sample)]]></wp:term_name>
+	</wp:term>
+		<wp:term>
 		<wp:term_id>4</wp:term_id>
-		<wp:category_nicename><![CDATA[test3]]></wp:category_nicename>
-		<wp:category_parent><![CDATA[test2]]></wp:category_parent>
-		<wp:cat_name><![CDATA[第三カテゴリ]]></wp:cat_name>
-	</wp:category>
-				<wp:term>
+		<wp:term_taxonomy><![CDATA[category]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[works-2021]]></wp:term_slug>
+		<wp:term_parent><![CDATA[works]]></wp:term_parent>
+		<wp:term_name><![CDATA[2021年度]]></wp:term_name>
+	</wp:term>
+		<wp:term>
+		<wp:term_id>5</wp:term_id>
+		<wp:term_taxonomy><![CDATA[category]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[memo]]></wp:term_slug>
+		<wp:term_parent><![CDATA[works-2021]]></wp:term_parent>
+		<wp:term_name><![CDATA[議事メモ]]></wp:term_name>
+	</wp:term>
+		<wp:term>
+		<wp:term_id>3</wp:term_id>
+		<wp:term_taxonomy><![CDATA[category]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[private]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[Private(sample)]]></wp:term_name>
+	</wp:term>
+		<wp:term>
+		<wp:term_id>6</wp:term_id>
+		<wp:term_taxonomy><![CDATA[category]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[recipe]]></wp:term_slug>
+		<wp:term_parent><![CDATA[private]]></wp:term_parent>
+		<wp:term_name><![CDATA[レシピ]]></wp:term_name>
+	</wp:term>
+		<wp:term>
+		<wp:term_id>8</wp:term_id>
+		<wp:term_taxonomy><![CDATA[category]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[japanese-food]]></wp:term_slug>
+		<wp:term_parent><![CDATA[recipe]]></wp:term_parent>
+		<wp:term_name><![CDATA[和食]]></wp:term_name>
+	</wp:term>
+		<wp:term>
+		<wp:term_id>7</wp:term_id>
+		<wp:term_taxonomy><![CDATA[category]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[spicy]]></wp:term_slug>
+		<wp:term_parent><![CDATA[recipe]]></wp:term_parent>
+		<wp:term_name><![CDATA[スパイシー]]></wp:term_name>
+	</wp:term>
+		<wp:term>
 		<wp:term_id>1</wp:term_id>
 		<wp:term_taxonomy><![CDATA[category]]></wp:term_taxonomy>
 		<wp:term_slug><![CDATA[uncategorized]]></wp:term_slug>
 		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[Uncategorized]]></wp:term_name>
-	</wp:term>
-		<wp:term>
-		<wp:term_id>2</wp:term_id>
-		<wp:term_taxonomy><![CDATA[category]]></wp:term_taxonomy>
-		<wp:term_slug><![CDATA[test1]]></wp:term_slug>
-		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[第一カテゴリ]]></wp:term_name>
-	</wp:term>
-		<wp:term>
-		<wp:term_id>3</wp:term_id>
-		<wp:term_taxonomy><![CDATA[category]]></wp:term_taxonomy>
-		<wp:term_slug><![CDATA[test2]]></wp:term_slug>
-		<wp:term_parent><![CDATA[test1]]></wp:term_parent>
-		<wp:term_name><![CDATA[第二カテゴリ]]></wp:term_name>
-	</wp:term>
-		<wp:term>
-		<wp:term_id>4</wp:term_id>
-		<wp:term_taxonomy><![CDATA[category]]></wp:term_taxonomy>
-		<wp:term_slug><![CDATA[test3]]></wp:term_slug>
-		<wp:term_parent><![CDATA[test2]]></wp:term_parent>
-		<wp:term_name><![CDATA[第三カテゴリ]]></wp:term_name>
+		<wp:term_name><![CDATA[未分類]]></wp:term_name>
 	</wp:term>
 		
 	<generator>https://wordpress.org/?v=5.8.1</generator>
 
 		<item>
 		<title><![CDATA[Hello world!]]></title>
-		<link>http://localhost:10063/hello-world/</link>
-		<pubDate>Tue, 14 Sep 2021 11:23:46 +0000</pubDate>
+		<link>https://sample-cs.kote2.co/2021/09/20/hello-world/</link>
+		<pubDate>Mon, 20 Sep 2021 06:05:33 +0000</pubDate>
 		<dc:creator><![CDATA[kote2]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:10063/?p=1</guid>
+		<guid isPermaLink="false">http://sample-cs.kote2.co/?p=1</guid>
 		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>WordPress へようこそ。こちらは最初の投稿です。編集または削除し、コンテンツ作成を始めてください。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>1</wp:post_id>
-		<wp:post_date><![CDATA[2021-09-14 11:23:46]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2021-09-14 11:23:46]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2021-09-14 12:10:28]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2021-09-14 12:10:28]]></wp:post_modified_gmt>
+		<wp:post_date><![CDATA[2021-09-20 15:05:33]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-09-20 06:05:33]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-09-20 15:05:33]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-09-20 06:05:33]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
 		<wp:post_name><![CDATA[hello-world]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
+		<wp:menu_order>11</wp:menu_order>
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
-		<category domain="category" nicename="test1"><![CDATA[第一カテゴリ]]></category>
-		<category domain="category" nicename="test3"><![CDATA[第三カテゴリ]]></category>
-		<category domain="category" nicename="test2"><![CDATA[第二カテゴリ]]></category>
-						<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[cf_URL]]></wp:meta_key>
-		<wp:meta_value><![CDATA[https://kote2.tokyo/post/code-stocks-wp-theme]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_cf_URL]]></wp:meta_key>
-		<wp:meta_value><![CDATA[field_61408fa4ed66c]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:comment>
+										<category domain="category" nicename="uncategorized"><![CDATA[未分類]]></category>
+						<wp:comment>
 			<wp:comment_id>1</wp:comment_id>
-			<wp:comment_author><![CDATA[A WordPress Commenter]]></wp:comment_author>
+			<wp:comment_author><![CDATA[WordPress コメントの投稿者]]></wp:comment_author>
 			<wp:comment_author_email><![CDATA[wapuu@wordpress.example]]></wp:comment_author_email>
 			<wp:comment_author_url>https://wordpress.org/</wp:comment_author_url>
 			<wp:comment_author_IP><![CDATA[]]></wp:comment_author_IP>
-			<wp:comment_date><![CDATA[2021-09-14 11:23:46]]></wp:comment_date>
-			<wp:comment_date_gmt><![CDATA[2021-09-14 11:23:46]]></wp:comment_date_gmt>
-			<wp:comment_content><![CDATA[Hi, this is a comment.
-To get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard.
-Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:comment_content>
+			<wp:comment_date><![CDATA[2021-09-20 15:05:33]]></wp:comment_date>
+			<wp:comment_date_gmt><![CDATA[2021-09-20 06:05:33]]></wp:comment_date_gmt>
+			<wp:comment_content><![CDATA[こんにちは、これはコメントです。
+コメントの承認、編集、削除を始めるにはダッシュボードの「コメント画面」にアクセスしてください。
+コメントのアバターは「<a href="https://gravatar.com">Gravatar</a>」から取得されます。]]></wp:comment_content>
 			<wp:comment_approved><![CDATA[1]]></wp:comment_approved>
 			<wp:comment_type><![CDATA[comment]]></wp:comment_type>
 			<wp:comment_parent>0</wp:comment_parent>
@@ -149,43 +265,43 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 							</wp:comment>
 					</item>
 					<item>
-		<title><![CDATA[Sample Page]]></title>
-		<link>http://localhost:10063/sample-page/</link>
-		<pubDate>Tue, 14 Sep 2021 11:23:46 +0000</pubDate>
+		<title><![CDATA[サンプルページ]]></title>
+		<link>https://sample-cs.kote2.co/sample-page/</link>
+		<pubDate>Mon, 20 Sep 2021 06:05:33 +0000</pubDate>
 		<dc:creator><![CDATA[kote2]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:10063/?page_id=2</guid>
+		<guid isPermaLink="false">http://sample-cs.kote2.co/?page_id=2</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
-<p>This is an example page. It's different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:</p>
+<p>これはサンプルページです。同じ位置に固定され、(多くのテーマでは) サイトナビゲーションメニューに含まれる点がブログ投稿とは異なります。まずは、サイト訪問者に対して自分のことを説明する自己紹介ページを作成するのが一般的です。たとえば以下のようなものです。</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:quote -->
-<blockquote class="wp-block-quote"><p>Hi there! I'm a bike messenger by day, aspiring actor by night, and this is my website. I live in Los Angeles, have a great dog named Jack, and I like pi&#241;a coladas. (And gettin' caught in the rain.)</p></blockquote>
+<blockquote class="wp-block-quote"><p>はじめまして。昼間はバイク便のメッセンジャーとして働いていますが、俳優志望でもあります。これは僕のサイトです。ロサンゼルスに住み、ジャックという名前のかわいい犬を飼っています。好きなものはピニャコラーダ、そして通り雨に濡れること。</p></blockquote>
 <!-- /wp:quote -->
 
 <!-- wp:paragraph -->
-<p>...or something like this:</p>
+<p>または、このようなものです。</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:quote -->
-<blockquote class="wp-block-quote"><p>The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.</p></blockquote>
+<blockquote class="wp-block-quote"><p>XYZ 小道具株式会社は1971年の創立以来、高品質の小道具を皆様にご提供させていただいています。ゴッサム・シティに所在する当社では2,000名以上の社員が働いており、様々な形で地域のコミュニティへ貢献しています。</p></blockquote>
 <!-- /wp:quote -->
 
 <!-- wp:paragraph -->
-<p>As a new WordPress user, you should go to <a href="http://localhost:10063/wp-admin/">your dashboard</a> to delete this page and create new pages for your content. Have fun!</p>
+<p>新しく WordPress ユーザーになった方は、<a href="http://sample-cs.kote2.co/wp-admin/">ダッシュボード</a>へ行ってこのページを削除し、独自のコンテンツを含む新しいページを作成してください。それでは、お楽しみください !</p>
 <!-- /wp:paragraph -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>2</wp:post_id>
-		<wp:post_date><![CDATA[2021-09-14 11:23:46]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2021-09-14 11:23:46]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2021-09-14 11:23:46]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2021-09-14 11:23:46]]></wp:post_modified_gmt>
+		<wp:post_date><![CDATA[2021-09-20 15:05:33]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-09-20 06:05:33]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-09-20 15:05:33]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-09-20 06:05:33]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
 		<wp:post_name><![CDATA[sample-page]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
+		<wp:menu_order>1</wp:menu_order>
 		<wp:post_type><![CDATA[page]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
@@ -195,25 +311,25 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 		</wp:postmeta>
 							</item>
 					<item>
-		<title><![CDATA[Privacy Policy]]></title>
-		<link>http://localhost:10063/?page_id=3</link>
-		<pubDate>Tue, 14 Sep 2021 11:23:46 +0000</pubDate>
+		<title><![CDATA[プライバシーポリシー]]></title>
+		<link>https://sample-cs.kote2.co/?page_id=3</link>
+		<pubDate>Mon, 20 Sep 2021 06:05:33 +0000</pubDate>
 		<dc:creator><![CDATA[kote2]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:10063/?page_id=3</guid>
+		<guid isPermaLink="false">http://sample-cs.kote2.co/?page_id=3</guid>
 		<description></description>
-		<content:encoded><![CDATA[<!-- wp:heading --><h2>Who we are</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">Suggested text: </strong>Our website address is: http://localhost:10063.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Comments</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">Suggested text: </strong>When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor&#8217;s IP address and browser user agent string to help spam detection.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Media</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">Suggested text: </strong>If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Cookies</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">Suggested text: </strong>If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>If you visit our login page, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select &quot;Remember Me&quot;, your login will persist for two weeks. If you log out of your account, the login cookies will be removed.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Embedded content from other websites</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">Suggested text: </strong>Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracking your interaction with the embedded content if you have an account and are logged in to that website.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Who we share your data with</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">Suggested text: </strong>If you request a password reset, your IP address will be included in the reset email.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>How long we retain your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">Suggested text: </strong>If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>What rights you have over your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">Suggested text: </strong>If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Where we send your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">Suggested text: </strong>Visitor comments may be checked through an automated spam detection service.</p><!-- /wp:paragraph -->]]></content:encoded>
+		<content:encoded><![CDATA[<!-- wp:heading --><h2>私たちについて</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">提案テキスト: </strong>私たちのサイトアドレスは http://sample-cs.kote2.co です。</p><!-- /wp:paragraph --><!-- wp:heading --><h2>コメント</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">提案テキスト: </strong>訪問者がこのサイトにコメントを残す際、コメントフォームに表示されているデータ、そしてスパム検出に役立てるための IP アドレスとブラウザーユーザーエージェント文字列を収集します。</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>メールアドレスから作成される匿名化された (「ハッシュ」とも呼ばれる) 文字列は、あなたが Gravatar サービスを使用中かどうか確認するため同サービスに提供されることがあります。同サービスのプライバシーポリシーは https://automattic.com/privacy/ にあります。コメントが承認されると、プロフィール画像がコメントとともに一般公開されます。</p><!-- /wp:paragraph --><!-- wp:heading --><h2>メディア</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">提案テキスト: </strong>サイトに画像をアップロードする際、位置情報 (EXIF GPS) を含む画像をアップロードするべきではありません。サイトの訪問者は、サイトから画像をダウンロードして位置データを抽出することができます。</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Cookie</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">提案テキスト: </strong>サイトにコメントを残す際、お名前、メールアドレス、サイトを Cookie に保存することにオプトインできます。これはあなたの便宜のためであり、他のコメントを残す際に詳細情報を再入力する手間を省きます。この Cookie は1年間保持されます。</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>ログインページを訪問すると、お使いのブラウザーが Cookie を受け入れられるかを判断するために一時 Cookie を設定します。この Cookie は個人データを含んでおらず、ブラウザーを閉じると廃棄されます。</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>ログインの際さらに、ログイン情報と画面表示情報を保持するため、私たちはいくつかの Cookie を設定します。ログイン Cookie は2日間、画面表示オプション Cookie は1年間保持されます。「ログイン状態を保存する」を選択した場合、ログイン情報は2週間維持されます。ログアウトするとログイン Cookie は消去されます。</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>もし投稿を編集または公開すると、さらなる Cookie がブラウザーに保存されます。この Cookie は個人データを含まず、単に変更した投稿の ID を示すものです。1日で有効期限が切れます。</p><!-- /wp:paragraph --><!-- wp:heading --><h2>他サイトからの埋め込みコンテンツ</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">提案テキスト: </strong>このサイトの投稿には埋め込みコンテンツ (動画、画像、投稿など) が含まれます。他サイトからの埋め込みコンテンツは、訪問者がそのサイトを訪れた場合とまったく同じように振る舞います。</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>これらのサイトは、あなたのデータの収集、Cookie の使用、サードパーティによる追加トラッキングの埋め込み、埋め込みコンテンツとのやりとりの監視を行うことがあります。アカウントを使ってそのサイトにログイン中の場合、埋め込みコンテンツとのやりとりのトラッキングも含まれます。</p><!-- /wp:paragraph --><!-- wp:heading --><h2>あなたのデータの共有先</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">提案テキスト: </strong>パスワードリセットをリクエストすると、IP アドレスがリセット用のメールに含まれます。</p><!-- /wp:paragraph --><!-- wp:heading --><h2>データを保存する期間</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">提案テキスト: </strong>あなたがコメントを残すと、コメントとそのメタデータが無期限に保持されます。これは、モデレーションキューにコメントを保持しておく代わりに、フォローアップのコメントを自動的に認識し承認できるようにするためです。</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>このサイトに登録したユーザーがいる場合、その方がユーザープロフィールページで提供した個人情報を保存します。すべてのユーザーは自分の個人情報を表示、編集、削除することができます (ただしユーザー名は変更することができません)。サイト管理者もそれらの情報を表示、編集できます。</p><!-- /wp:paragraph --><!-- wp:heading --><h2>データに対するあなたの権利</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">提案テキスト: </strong>このサイトのアカウントを持っているか、サイトにコメントを残したことがある場合、私たちが保持するあなたについての個人データ (提供したすべてのデータを含む) をエクスポートファイルとして受け取るリクエストを行うことができます。また、個人データの消去リクエストを行うこともできます。これには、管理、法律、セキュリティ目的のために保持する義務があるデータは含まれません。</p><!-- /wp:paragraph --><!-- wp:heading --><h2>あなたのデータの送信先</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">提案テキスト: </strong>訪問者によるコメントは、自動スパム検出サービスを通じて確認を行う場合があります。</p><!-- /wp:paragraph -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>3</wp:post_id>
-		<wp:post_date><![CDATA[2021-09-14 11:23:46]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2021-09-14 11:23:46]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2021-09-14 11:23:46]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2021-09-14 11:23:46]]></wp:post_modified_gmt>
+		<wp:post_date><![CDATA[2021-09-20 15:05:33]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-09-20 06:05:33]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-09-20 15:05:33]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-09-20 06:05:33]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
 		<wp:post_name><![CDATA[privacy-policy]]></wp:post_name>
 		<wp:status><![CDATA[draft]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
+		<wp:menu_order>2</wp:menu_order>
 		<wp:post_type><![CDATA[page]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
@@ -224,21 +340,21 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 							</item>
 					<item>
 		<title><![CDATA[URL]]></title>
-		<link>http://localhost:10063/?post_type=acf-field-group&#038;p=5</link>
-		<pubDate>Tue, 14 Sep 2021 12:04:16 +0000</pubDate>
+		<link>https://sample-cs.kote2.co/?post_type=acf-field-group&#038;p=5</link>
+		<pubDate>Mon, 20 Sep 2021 06:24:08 +0000</pubDate>
 		<dc:creator><![CDATA[kote2]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:10063/?post_type=acf-field-group&#038;p=5</guid>
+		<guid isPermaLink="false">http://sample-cs.kote2.co/?post_type=acf-field-group&#038;p=5</guid>
 		<description></description>
 		<content:encoded><![CDATA[a:7:{s:8:"location";a:1:{i:0;a:1:{i:0;a:3:{s:5:"param";s:9:"post_type";s:8:"operator";s:2:"==";s:5:"value";s:4:"post";}}}s:8:"position";s:6:"normal";s:5:"style";s:7:"default";s:15:"label_placement";s:3:"top";s:21:"instruction_placement";s:5:"label";s:14:"hide_on_screen";s:0:"";s:11:"description";s:0:"";}]]></content:encoded>
 		<excerpt:encoded><![CDATA[url]]></excerpt:encoded>
 		<wp:post_id>5</wp:post_id>
-		<wp:post_date><![CDATA[2021-09-14 12:04:16]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2021-09-14 12:04:16]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2021-09-14 12:04:16]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2021-09-14 12:04:16]]></wp:post_modified_gmt>
+		<wp:post_date><![CDATA[2021-09-20 15:24:08]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-09-20 06:24:08]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-09-21 16:26:46]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-09-21 07:26:46]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[group_61408f8d74efa]]></wp:post_name>
+		<wp:post_name><![CDATA[group_614828ee5e017]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
@@ -252,21 +368,21 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 							</item>
 					<item>
 		<title><![CDATA[URL]]></title>
-		<link>http://localhost:10063/?post_type=acf-field&#038;p=6</link>
-		<pubDate>Tue, 14 Sep 2021 12:04:16 +0000</pubDate>
+		<link>https://sample-cs.kote2.co/?post_type=acf-field&#038;p=6</link>
+		<pubDate>Mon, 20 Sep 2021 06:24:08 +0000</pubDate>
 		<dc:creator><![CDATA[kote2]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:10063/?post_type=acf-field&#038;p=6</guid>
+		<guid isPermaLink="false">http://sample-cs.kote2.co/?post_type=acf-field&#038;p=6</guid>
 		<description></description>
 		<content:encoded><![CDATA[a:7:{s:4:"type";s:3:"url";s:12:"instructions";s:0:"";s:8:"required";i:0;s:17:"conditional_logic";i:0;s:7:"wrapper";a:3:{s:5:"width";s:0:"";s:5:"class";s:0:"";s:2:"id";s:0:"";}s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";}]]></content:encoded>
 		<excerpt:encoded><![CDATA[cf_URL]]></excerpt:encoded>
 		<wp:post_id>6</wp:post_id>
-		<wp:post_date><![CDATA[2021-09-14 12:04:16]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2021-09-14 12:04:16]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2021-09-14 12:04:16]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2021-09-14 12:04:16]]></wp:post_modified_gmt>
+		<wp:post_date><![CDATA[2021-09-20 15:24:08]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-09-20 06:24:08]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-09-21 16:26:46]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-09-21 07:26:46]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[field_61408fa4ed66c]]></wp:post_name>
+		<wp:post_name><![CDATA[field_614828f7eadea]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>5</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
@@ -275,42 +391,534 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.]]></wp:
 		<wp:is_sticky>0</wp:is_sticky>
 														</item>
 					<item>
-		<title><![CDATA[codepen]]></title>
-		<link>http://localhost:10063/codepen/</link>
-		<pubDate>Tue, 14 Sep 2021 12:12:29 +0000</pubDate>
+		<title><![CDATA[議事メモです]]></title>
+		<link>https://sample-cs.kote2.co/2021/09/21/post-8/</link>
+		<pubDate>Tue, 21 Sep 2021 07:14:16 +0000</pubDate>
 		<dc:creator><![CDATA[kote2]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:10063/?p=9</guid>
+		<guid isPermaLink="false">https://sample-cs.kote2.co/?p=8</guid>
 		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
+		<content:encoded><![CDATA[<h1 class="com_tail mb">h1です</h1>
+うううううう
+
+<h2 class="com_tail my">h2です</h2>
+うううううう
+
+<h3 class="com_tail my">h３です</h3>
+うううううう
+
+<h4 class="com_tail my">h4です</h4>
+うううううう
+
+<h5 class="com_tail my">h5です</h5>
+うううううう
+
+<h6 class="com_tail my">h6です</h6>
+うううううう
+
+]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>9</wp:post_id>
-		<wp:post_date><![CDATA[2021-09-14 12:12:29]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2021-09-14 12:12:29]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2021-09-14 12:12:29]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2021-09-14 12:12:29]]></wp:post_modified_gmt>
+		<wp:post_id>8</wp:post_id>
+		<wp:post_date><![CDATA[2021-09-21 16:14:16]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-09-21 07:14:16]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-09-21 16:14:16]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-09-21 07:14:16]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
-		<wp:post_name><![CDATA[codepen]]></wp:post_name>
+		<wp:post_name><![CDATA[post-8]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
+		<wp:menu_order>10</wp:menu_order>
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="test1"><![CDATA[第一カテゴリ]]></category>
-		<category domain="category" nicename="test3"><![CDATA[第三カテゴリ]]></category>
-		<category domain="category" nicename="test2"><![CDATA[第二カテゴリ]]></category>
+										<category domain="category" nicename="works"><![CDATA[Works(sample)]]></category>
+		<category domain="category" nicename="works-2021"><![CDATA[2021年度]]></category>
+		<category domain="category" nicename="memo"><![CDATA[議事メモ]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_614828f7eadea]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[和食のレシピ]]></title>
+		<link>https://sample-cs.kote2.co/2021/09/21/post-10/</link>
+		<pubDate>Tue, 21 Sep 2021 07:15:37 +0000</pubDate>
+		<dc:creator><![CDATA[kote2]]></dc:creator>
+		<guid isPermaLink="false">https://sample-cs.kote2.co/?p=10</guid>
+		<description></description>
+		<content:encoded><![CDATA[<h1 class="com_tail mb">h1です</h1>
+うううううう
+
+<h2 class="com_tail my">h2です</h2>
+うううううう
+
+<h3 class="com_tail my">h３です</h3>
+うううううう
+
+<h4 class="com_tail my">h4です</h4>
+うううううう
+
+<h5 class="com_tail my">h5です</h5>
+うううううう
+
+<h6 class="com_tail my">h6です</h6>
+うううううう
+
+]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>10</wp:post_id>
+		<wp:post_date><![CDATA[2021-09-21 16:15:37]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-09-21 07:15:37]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-09-21 16:15:37]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-09-21 07:15:37]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[open]]></wp:ping_status>
+		<wp:post_name><![CDATA[post-10]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>9</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="category" nicename="private"><![CDATA[Private(sample)]]></category>
+		<category domain="category" nicename="recipe"><![CDATA[レシピ]]></category>
+		<category domain="category" nicename="japanese-food"><![CDATA[和食]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_614828f7eadea]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[スパイシーなレシピ]]></title>
+		<link>https://sample-cs.kote2.co/2021/09/21/post-12/</link>
+		<pubDate>Tue, 21 Sep 2021 07:15:58 +0000</pubDate>
+		<dc:creator><![CDATA[kote2]]></dc:creator>
+		<guid isPermaLink="false">https://sample-cs.kote2.co/?p=12</guid>
+		<description></description>
+		<content:encoded><![CDATA[<h1 class="com_tail mb">h1です</h1>
+うううううう
+
+<h2 class="com_tail my">h2です</h2>
+うううううう
+
+<h3 class="com_tail my">h３です</h3>
+うううううう
+
+<h4 class="com_tail my">h4です</h4>
+うううううう
+
+<h5 class="com_tail my">h5です</h5>
+うううううう
+
+<h6 class="com_tail my">h6です</h6>
+うううううう
+
+]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>12</wp:post_id>
+		<wp:post_date><![CDATA[2021-09-21 16:15:58]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-09-21 07:15:58]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-09-21 16:15:58]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-09-21 07:15:58]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[open]]></wp:ping_status>
+		<wp:post_name><![CDATA[post-12]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>8</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="category" nicename="private"><![CDATA[Private(sample)]]></category>
+		<category domain="category" nicename="recipe"><![CDATA[レシピ]]></category>
+		<category domain="category" nicename="spicy"><![CDATA[スパイシー]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_614828f7eadea]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[CodepenのURLを貼付]]></title>
+		<link>https://sample-cs.kote2.co/2021/09/21/post-20/</link>
+		<pubDate>Tue, 21 Sep 2021 07:43:33 +0000</pubDate>
+		<dc:creator><![CDATA[kote2]]></dc:creator>
+		<guid isPermaLink="false">https://sample-cs.kote2.co/?p=20</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>20</wp:post_id>
+		<wp:post_date><![CDATA[2021-09-21 16:43:33]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-09-21 07:43:33]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-09-21 16:44:36]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-09-21 07:44:36]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[open]]></wp:ping_status>
+		<wp:post_name><![CDATA[post-20]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>3</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="category" nicename="manual"><![CDATA[Manual]]></category>
+		<category domain="category" nicename="about-post"><![CDATA[記事投稿の種類]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[cf_URL]]></wp:meta_key>
-		<wp:meta_value><![CDATA[https://codepen.io/kote2kote/pen/zYwPgJe]]></wp:meta_value>
+		<wp:meta_value><![CDATA[https://codepen.io/knyttneve/pen/vYEzXOR]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_cf_URL]]></wp:meta_key>
-		<wp:meta_value><![CDATA[field_61408fa4ed66c]]></wp:meta_value>
+		<wp:meta_value><![CDATA[field_614828f7eadea]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[普通の記事]]></title>
+		<link>https://sample-cs.kote2.co/2021/09/21/post-25/</link>
+		<pubDate>Tue, 21 Sep 2021 07:40:00 +0000</pubDate>
+		<dc:creator><![CDATA[kote2]]></dc:creator>
+		<guid isPermaLink="false">https://sample-cs.kote2.co/?p=25</guid>
+		<description></description>
+		<content:encoded><![CDATA[<h1 class="com_tail mb">h1です</h1>
+うううううう
+
+<h2 class="com_tail my">h2です</h2>
+うううううう
+
+<h3 class="com_tail my">h３です</h3>
+うううううう
+
+<h4 class="com_tail my">h4です</h4>
+うううううう
+
+<h5 class="com_tail my">h5です</h5>
+うううううう
+
+<h6 class="com_tail my">h6です</h6>
+うううううう
+
+]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>25</wp:post_id>
+		<wp:post_date><![CDATA[2021-09-21 16:40:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-09-21 07:40:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-09-21 16:40:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-09-21 07:40:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[open]]></wp:ping_status>
+		<wp:post_name><![CDATA[post-25]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>7</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="category" nicename="manual"><![CDATA[Manual]]></category>
+		<category domain="category" nicename="about-post"><![CDATA[記事投稿の種類]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[cf_URL]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_cf_URL]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_614828f7eadea]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[第一階層の記事]]></title>
+		<link>https://sample-cs.kote2.co/2021/09/21/post-28/</link>
+		<pubDate>Tue, 21 Sep 2021 07:41:15 +0000</pubDate>
+		<dc:creator><![CDATA[kote2]]></dc:creator>
+		<guid isPermaLink="false">https://sample-cs.kote2.co/?p=28</guid>
+		<description></description>
+		<content:encoded><![CDATA[<h1 class="com_tail mb">h1です</h1>
+うううううう
+
+<h2 class="com_tail my">h2です</h2>
+うううううう
+
+<h3 class="com_tail my">h３です</h3>
+うううううう
+
+<h4 class="com_tail my">h4です</h4>
+うううううう
+
+<h5 class="com_tail my">h5です</h5>
+うううううう
+
+<h6 class="com_tail my">h6です</h6>
+うううううう
+
+]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>28</wp:post_id>
+		<wp:post_date><![CDATA[2021-09-21 16:41:15]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-09-21 07:41:15]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-09-21 16:41:15]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-09-21 07:41:15]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[open]]></wp:ping_status>
+		<wp:post_name><![CDATA[post-28]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>6</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="category" nicename="manual"><![CDATA[Manual]]></category>
+		<category domain="category" nicename="floor01"><![CDATA[階層は第一階層]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[cf_URL]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_cf_URL]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_614828f7eadea]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[第二階層の記事]]></title>
+		<link>https://sample-cs.kote2.co/2021/09/21/post-30/</link>
+		<pubDate>Tue, 21 Sep 2021 07:41:35 +0000</pubDate>
+		<dc:creator><![CDATA[kote2]]></dc:creator>
+		<guid isPermaLink="false">https://sample-cs.kote2.co/?p=30</guid>
+		<description></description>
+		<content:encoded><![CDATA[<h1 class="com_tail mb">h1です</h1>
+うううううう
+
+<h2 class="com_tail my">h2です</h2>
+うううううう
+
+<h3 class="com_tail my">h３です</h3>
+うううううう
+
+<h4 class="com_tail my">h4です</h4>
+うううううう
+
+<h5 class="com_tail my">h5です</h5>
+うううううう
+
+<h6 class="com_tail my">h6です</h6>
+うううううう
+
+]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>30</wp:post_id>
+		<wp:post_date><![CDATA[2021-09-21 16:41:35]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-09-21 07:41:35]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-09-21 16:41:35]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-09-21 07:41:35]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[open]]></wp:ping_status>
+		<wp:post_name><![CDATA[post-30]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>5</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="category" nicename="manual"><![CDATA[Manual]]></category>
+		<category domain="category" nicename="floor01"><![CDATA[階層は第一階層]]></category>
+		<category domain="category" nicename="floor0%ef%bc%92"><![CDATA[第二階層]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[cf_URL]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_cf_URL]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_614828f7eadea]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[第三階層の記事]]></title>
+		<link>https://sample-cs.kote2.co/2021/09/21/post-32/</link>
+		<pubDate>Tue, 21 Sep 2021 07:42:05 +0000</pubDate>
+		<dc:creator><![CDATA[kote2]]></dc:creator>
+		<guid isPermaLink="false">https://sample-cs.kote2.co/?p=32</guid>
+		<description></description>
+		<content:encoded><![CDATA[<h1 class="com_tail mb">h1です</h1>
+うううううう
+
+<h2 class="com_tail my">h2です</h2>
+うううううう
+
+<h3 class="com_tail my">h３です</h3>
+うううううう
+
+<h4 class="com_tail my">h4です</h4>
+うううううう
+
+<h5 class="com_tail my">h5です</h5>
+うううううう
+
+<h6 class="com_tail my">h6です</h6>
+うううううう
+
+]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>32</wp:post_id>
+		<wp:post_date><![CDATA[2021-09-21 16:42:05]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-09-21 07:42:05]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-09-21 16:42:05]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-09-21 07:42:05]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[open]]></wp:ping_status>
+		<wp:post_name><![CDATA[post-32]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>4</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="category" nicename="manual"><![CDATA[Manual]]></category>
+		<category domain="category" nicename="floor01"><![CDATA[階層は第一階層]]></category>
+		<category domain="category" nicename="floor0%ef%bc%92"><![CDATA[第二階層]]></category>
+		<category domain="category" nicename="floor03"><![CDATA[第三階層まで]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[cf_URL]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_cf_URL]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_614828f7eadea]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[[note]タグでアイコン]]></title>
+		<link>https://sample-cs.kote2.co/2021/09/21/post-34/</link>
+		<pubDate>Tue, 21 Sep 2021 07:43:14 +0000</pubDate>
+		<dc:creator><![CDATA[kote2]]></dc:creator>
+		<guid isPermaLink="false">https://sample-cs.kote2.co/?p=34</guid>
+		<description></description>
+		<content:encoded><![CDATA[<h1 class="com_tail mb">h1です</h1>
+うううううう
+
+<h2 class="com_tail my">h2です</h2>
+うううううう
+
+<h3 class="com_tail my">h３です</h3>
+うううううう
+
+<h4 class="com_tail my">h4です</h4>
+うううううう
+
+<h5 class="com_tail my">h5です</h5>
+うううううう
+
+<h6 class="com_tail my">h6です</h6>
+うううううう
+
+]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>34</wp:post_id>
+		<wp:post_date><![CDATA[2021-09-21 16:43:14]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-09-21 07:43:14]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-09-21 16:43:14]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-09-21 07:43:14]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[open]]></wp:ping_status>
+		<wp:post_name><![CDATA[post-34]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>2</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="category" nicename="manual"><![CDATA[Manual]]></category>
+		<category domain="post_tag" nicename="note"><![CDATA[note]]></category>
+		<category domain="category" nicename="about-post"><![CDATA[記事投稿の種類]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[cf_URL]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_cf_URL]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_614828f7eadea]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[CodeSandboxのURLを貼付]]></title>
+		<link>https://sample-cs.kote2.co/2021/09/21/post-38/</link>
+		<pubDate>Tue, 21 Sep 2021 07:46:51 +0000</pubDate>
+		<dc:creator><![CDATA[kote2]]></dc:creator>
+		<guid isPermaLink="false">https://sample-cs.kote2.co/?p=38</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>38</wp:post_id>
+		<wp:post_date><![CDATA[2021-09-21 16:46:51]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2021-09-21 07:46:51]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2021-09-21 16:48:10]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2021-09-21 07:48:10]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[open]]></wp:ping_status>
+		<wp:post_name><![CDATA[post-38]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>1</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="category" nicename="manual"><![CDATA[Manual]]></category>
+		<category domain="category" nicename="about-post"><![CDATA[記事投稿の種類]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[cf_URL]]></wp:meta_key>
+		<wp:meta_value><![CDATA[https://codesandbox.io/s/runtime-wildflower-nl919]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_cf_URL]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_614828f7eadea]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 				</channel>

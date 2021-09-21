@@ -7,6 +7,31 @@
  * @package wp_code_stocks
  */
 
+ // --------------------------------------------------
+// 環境変数の定義
+// --------------------------------------------------
+// 記事データ作成用
+$exclude_catid = [1]; // 除外カテゴリID
+$no_images_url = 'https://via.placeholder.com/1024x768/27709b/ffffff?text=no-images';//画像なし時のURL
+
+// 本番/開発環境判別用
+// global $dev_url;
+// global $prod_url;
+// global $is_dev;
+// global $is_prod;
+// $is_dev = $is_prod = false;
+// $dev_url = 'http://localhost:10058'; // dev環境のURL 自由に変更してください
+// $prod_url = 'https://code-stocks.kote2.co'; // prod環境のURL 自由に変更してください
+
+// 現在の環境が本番環境/開発環境か判別フラグ作成
+// if(home_url() === $dev_url) {
+//   $is_dev = true;
+// } else {
+//   $is_prod = true;
+// }
+
+// $is_prod = true;
+
 // --------------------------------------------------
 // WordPressのViewを無効化(nuxt/next用)
 // --------------------------------------------------
@@ -22,30 +47,7 @@ function my_customize_rest_cors() {
 }
 add_action( 'rest_api_init', 'my_customize_rest_cors', 15 );
 
-// --------------------------------------------------
-// 環境変数の定義
-// --------------------------------------------------
-// 記事データ作成用
-$exclude_catid = [1]; // 除外カテゴリID
-$no_images_url = 'https://via.placeholder.com/1024x768/27709b/ffffff?text=no-images';//画像なし時のURL
 
-// 本番/開発環境判別用
-global $dev_url;
-global $prod_url;
-global $is_dev;
-global $is_prod;
-$is_dev = $is_prod = false;
-$dev_url = 'http://localhost:10058'; // dev環境のURL 自由に変更してください
-$prod_url = 'https://code-stocks.kote2.co'; // prod環境のURL 自由に変更してください
-
-// 現在の環境が本番環境/開発環境か判別フラグ作成
-if(home_url() === $dev_url) {
-  $is_dev = true;
-} else {
-  $is_prod = true;
-}
-
-$is_prod = true;
 
 
 // --------------------------------------------------

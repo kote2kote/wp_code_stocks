@@ -2,6 +2,7 @@
 // setting
 // ==================================================
 const locationURL = window.location.origin;
+const defaultURL = 'https://start.me/p/DPQNjG/top';
 let isProd = false;
 
 // 開発環境か本番環境か
@@ -23,10 +24,11 @@ const jsonRead = Vue.createApp({
       restCatURL: '',
       restCatData: [],
       postData: [],
+      catId: null,
       embedURL: {
         id: '',
         user: '',
-        url: 'https://start.me/p/DPQNjG/top',
+        url: defaultURL, // ログイン時の初期ページ
         postId: '',
         locationURL: locationURL,
         link: '',
@@ -34,10 +36,13 @@ const jsonRead = Vue.createApp({
       isNote: false,
       searchWord: '',
       isOpenManageArray: [],
+      readPostInterval: null,
+      isMouseOver: false,
+      isSidebarLeft: true,
     };
   },
   mounted() {
-    // loginChecker
+    // loginChecker(refが表示されていればログイン)
     // if (this.$refs.loginChecker) {
     //   // 管理画面にログインしている場合
     //   this.restCatURL = `${locationURL}/wp-json/wp/v2/categories?_embed&per_page=100&exclude=1`;
@@ -46,49 +51,38 @@ const jsonRead = Vue.createApp({
     //   this.restCatURL = `${locationURL}/wp-json/wp/v2/categories?_embed&per_page=100&exclude=1`;
     // }
     this.restCatURL = `${locationURL}/wp-json/wp/v2/categories?_embed&per_page=100&exclude=1`;
-    console.log(this.restCatURL);
+    // console.log(this.restCatURL);
     this.init();
   },
   methods: {
-    async init() {
+    // --------------------------------------------------
+    // カテゴリリストを取得
+    // --------------------------------------------------
+    async init(mover = true) {
+      // console.log('init');
       try {
         const res = await fetch(new URL(this.restCatURL));
         const data = await res.json();
         let tmp_arr = [];
 
         for (const n of data) {
-          // console.log(n.id);
-          let tmp_arr2 = {};
-          tmp_arr2.id = n.id;
-          tmp_arr2.isOpen = false;
-          this.isOpenManageArray.push(tmp_arr2);
+          if (mover) {
+            // サイドバーのマウスオーバーで開閉されないように
+            let tmp_arr2 = {};
+            tmp_arr2.id = n.id;
+            tmp_arr2.isOpen = false;
+            this.isOpenManageArray.push(tmp_arr2);
+          }
 
           if (n.parent === 0) {
             n.children = [];
-            // tmp_arr2.id = n.id;
-            // tmp_arr2.isOpen = false;
-            // console.log(tmp_arr2);
-            // this.isOpenManageArray.push(tmp_arr2);
-            // console.log(this.isOpenManageArray);
-            // n.isOpen = false;
             for (const nn of data) {
               if (n.id === nn.parent) {
                 nn.children = [];
-                // nn.isOpen = false;
-                // tmp_arr3.id = nn.id;
-                // tmp_arr3.isOpen = false;
-                // console.log(tmp_arr3);
-                // this.isOpenManageArray.push(tmp_arr3);
-                // console.log(this.isOpenManageArray);
                 n.children.push(nn);
                 for (const nnn of data) {
                   if (nn.id === nnn.parent) {
                     nnn.children = [];
-                    // nnn.isOpen = false;
-                    // tmp_arr4.id = nnn.id;
-                    // tmp_arr4.isOpen = false;
-                    // this.isOpenManageArray.push(tmp_arr4);
-                    // console.log(this.isOpenManageArray);
                     nn.children.push(nnn);
                     for (const nnnn of data) {
                       if (nnn.id === nnnn.parent) {
@@ -103,29 +97,25 @@ const jsonRead = Vue.createApp({
           }
         }
         this.restCatData = tmp_arr;
-        // console.log(this.restCatData);
-        // console.log(this.isOpenManageArray);
       } catch (e) {
         const { status, statusText } = error.response;
         console.log(`Error! HTTP Status: ${status} ${statusText}`);
       }
     },
-    checkIsOpen(id) {
-      for (const n of this.isOpenManageArray) {
-        if (n.id === id) {
-          // n.isOpen = !n.isOpen;
-          return n.isOpen;
+    // --------------------------------------------------
+    // 投稿ポストを取得
+    // --------------------------------------------------
+    async readPosts(id, mover = true) {
+      if (mover) {
+        // サイドバーのマウスオーバーで開閉されないように
+        this.catId = id;
+        for (const n of this.isOpenManageArray) {
+          if (n.id === id) {
+            n.isOpen = !n.isOpen;
+          }
         }
       }
-    },
-    async readPosts(id) {
-      // const res = await fetch(new URL(this.restCatURL));
-      //   const data = await res.json();
-      for (const n of this.isOpenManageArray) {
-        if (n.id === id) {
-          n.isOpen = !n.isOpen;
-        }
-      }
+
       try {
         const url = `${locationURL}/wp-json/wp/v2/posts?_embed&per_page=100&page=1&categories=${id}`;
         const res = await fetch(new URL(url));
@@ -133,8 +123,6 @@ const jsonRead = Vue.createApp({
         if (data.length > 0) {
           this.postData = []; // 初期化
           this.postData = data;
-          // console.log(url);
-          // console.log(data);
         }
       } catch (e) {
         const { status, statusText } = error.response;
@@ -146,7 +134,7 @@ const jsonRead = Vue.createApp({
       this.embedURL.url = url;
     },
     readPage(obj) {
-      console.log(obj.acf.cf_URL !== undefined);
+      // console.log(obj.acf.cf_URL !== undefined);
       this.embedURL = { id: '', user: '', url: '', postId: '', locationURL: '', link: '' };
       this.embedURL.postId = obj.id;
       if (obj.acf.cf_URL && obj.acf.cf_URL !== undefined) {
@@ -172,42 +160,35 @@ const jsonRead = Vue.createApp({
         console.log(obj.link);
         this.embedURL.link = obj.link;
       }
-      // if (url) {
-      //   if (url.indexOf('codepen') !== -1) {
-      //     this.embedURL = { id: '', user: '', url: '', postId: '', locationURL: '' };
-      //     this.isNote = false;
-      //     this.embedURL.id = url.match(/pen\/(.*)/)[1];
-      //     this.embedURL.user = url.match(/io\/(.*)\/pen/)[1];
-      //     this.embedURL.url = url;
-      //     this.embedURL.postId = postId;
-      //     this.embedURL.locationURL = locationURL;
-      //     if (tags !== false) {
-      //       for (const n of tags) {
-      //         if (n.slug === 'note') {
-      //           this.isNote = true;
-      //         }
-      //       }
-      //     }
-      //   } else {
-      //     this.embedURL = { id: '', user: '', url: '', postId: '', locationURL: '' };
-      //     this.embedURL.url = url;
-      //     this.embedURL.postId = postId;
-      //     this.embedURL.locationURL = locationURL;
-      //   }
-      // }
-      console.log(this.embedURL);
+      // console.log(this.embedURL);
     },
+    // --------------------------------------------------
+    // メニュー開閉
+    // --------------------------------------------------
+    checkIsOpen(id) {
+      for (const n of this.isOpenManageArray) {
+        if (n.id === id) {
+          return n.isOpen;
+        }
+      }
+    },
+    // --------------------------------------------------
+    // トップに戻るボタン的な(リセット)
+    // --------------------------------------------------
     onReset() {
       this.embedURL = {
         id: '',
         user: '',
-        url: 'https://start.me/p/DPQNjG/top',
+        url: defaultURL,
         postId: '',
         locationURL: '',
         link: '',
       };
       this.postData = [];
     },
+    // --------------------------------------------------
+    // 検索クエリ処理
+    // --------------------------------------------------
     async onSearchSubmit() {
       console.log('submit!');
       try {
@@ -223,6 +204,30 @@ const jsonRead = Vue.createApp({
         const { status, statusText } = error.response;
         console.log(`Error! HTTP Status: ${status} ${statusText}`);
       }
+    },
+    // --------------------------------------------------
+    // 擬似vuex(状態管理): サイドバーにマウスオーバしたらサイドメニューを更新
+    // --------------------------------------------------
+    catMouseOver() {
+      if (!this.isMouseOver) {
+        this.init(false);
+        if (this.catId) {
+          // console.log(this.catId);
+          this.readPosts(this.catId, false);
+          // this.checkIsOpen(this.catId);
+        }
+        this.isMouseOver = true;
+      }
+    },
+    catMouseLeave() {
+      // console.log('leave');
+      this.isMouseOver = false;
+    },
+    switchSidebar() {
+      this.isSidebarLeft = !this.isSidebarLeft;
+    },
+    test() {
+      // console.log('test');
     },
   },
 }).mount('.vue_app');

@@ -14,9 +14,9 @@ https://ja.wordpress.org/
 
 ## 最低限必要なプラグイン
 
-ACF to REST API → カスタムフィールド内容を restAPI に入れる
-Advanced Custom Fields → カスタムフィールド管理
-Intuitive Custom Post Order → カテゴリや投稿を並べ替えられるようにする
+- ACF to REST API → カスタムフィールド内容を restAPI に入れる
+- Advanced Custom Fields → カスタムフィールド管理
+- Intuitive Custom Post Order → カテゴリや投稿を並べ替えられるようにする
 
 
 
@@ -24,8 +24,7 @@ Intuitive Custom Post Order → カテゴリや投稿を並べ替えられるよ
 
 ## 初回インポートファイル
 
-import-latest.xml
-をお使いください。
+import-latest.xml をお使いください。(プラグインを先に入れてから)
 
 ## カスタマイズ等
 
@@ -42,7 +41,8 @@ import-latest.xml
 
 検索窓の下にあるアイコンで左右入れ替えができます。デフォルト左サイドバーです。デフォルト値を変更したければカスタマイズしてください。
 
-buils/js/scripts.js
+- src/js/json-read.js(ビルド前元ソース)
+- buils/js/scripts.js(ビルド後ソース)
 
 ```
 isSidebarLeft:  true // falseに変更
@@ -52,5 +52,5 @@ isSidebarLeft:  true // falseに変更
 
 php ソース内の is_user_logged_in()でくくってる部分をコメントアウトすれば表示されます。ただ、目的外なので不具合が出るかもしれませんので、そこは自己責任でお願いします。さらには SEO 対策レスポンシブ対応は一切行っていません。URL も基本的に一つですのでご了承ください。
 
-last update 210921
-update 210914
+- last update 210921
+- update 210914

@@ -1,75 +1,54 @@
 ## Code Stocks テーマについて
 
-codepen を表示する事に特化した wordpress テーマです。
+### 管理画面ログインで使用するテーマです
+
+Code Stocks テーマは、プライベートでの使用を目的とし、自分専用のノートに利用できます。また Code Stocks という名前の通り、プログラミングのコードを集めるような作りに特化しているのも特徴です。
+具体的には、Codepen や CodeSandbox などを iframe 表示する事により、同じ画面内でソースコードを参照できます。詳しくは<a href="https://sample-cs.kote2.co/" target="_blank">サンプルサイト</a>をご覧ください。
 
 <p align="center"><img align="center" style="width:320px" src="https://files.kote2.co/tmp/cs/ss.png"/></p>
+
+<a href="https://sample-cs.kote2.co/" target="_blank">sample page</a>.
 
 ## 使い方
 
 wordpress のテーマファイルとしてお使いください。wordpress のインストールについては公式サイトをご参考ください
 https://ja.wordpress.org/
 
-### 最低限必要なプラグイン
+## 最低限必要なプラグイン
 
-ACF to REST API
-　 → カスタムフィールド内容を restAPI に入れる
-
-Advanced Custom Fields
-　 → カスタムフィールド管理
-
-Intuitive Custom Post Order
-　 → カテゴリや投稿を並べ替えられるようにする
+ACF to REST API → カスタムフィールド内容を restAPI に入れる
+Advanced Custom Fields → カスタムフィールド管理
+Intuitive Custom Post Order → カテゴリや投稿を並べ替えられるようにする
 
 
 
-### 初回インポートファイル
+
+
+## 初回インポートファイル
 
 import-latest.xml
 をお使いください。
 
-### カスタマイズ等
+## カスタマイズ等
 
-#### ユーザー情報表示箇所
+当テーマは gulp を使用し scss コンパイルや tailwindcss など様々なビルド作業を行う事により作成されています。もし gulp の使用経験がある場合は、npm install から初めて頂いて問題ありません。**どんどんカスタマイズしちゃってください。**
+
+### ユーザー情報表示箇所
 
 ・サイト名
 ・ユーザー説明
 ・ユーザーアバター
 を使用しています。
 
-#### サイドバー
+### サイドバー左右入れ替え
 
-デフォルト左サイドバーです。**右サイドバーにしたい場合**はお手数ですがコード w 少しいじってください。
-
-header.php
-get_sidebar();をコメントアウト
-
-footer.php
-get_sidebar();をアンコメント
-
-sidebar.php
-↓ ソース内の以下コメントを参考にスタイルを調整してください
-
-```
-サブメニュー 左サイドバーの場合はout_rにorder-2を入れる。右サイドバーの場合は削除
-メインサイドバー 左サイドバーの場合はout_rにorder-1を入れる。右サイドバーの場合は削除
-```
-
-### 管理画面にログインしていないと表示されないカテゴリ
-
-プライベート用の codepen や web サイトを登録したいときはこちらをお使いください。
+検索窓の下にあるアイコンで左右入れ替えができます。デフォルト左サイドバーです。デフォルト値を変更したければカスタマイズしてください。
 
 buils/js/scripts.js
 
 ```
-管理画面にログインしていない場合に表示しないカテゴリid
-const  excludeCategory = isProd ? '4+9+43+52' : '26+29+28+13'; // 左:本番、右:開発
+isSidebarLeft:  true // falseに変更
 ```
 
-こちらのカテゴリ ID を変更してください。
-
-### プチテクニック
-
-note タグ(スラッグも note)を使って codepen を指定すると js 表示になります。
-js 欄をノート代わりに記述したい場合に便利です。
-
-last update 210914
+last update 210921
+update 210914

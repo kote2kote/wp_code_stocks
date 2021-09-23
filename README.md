@@ -18,10 +18,6 @@ https://ja.wordpress.org/
 - Advanced Custom Fields → カスタムフィールド管理
 - Intuitive Custom Post Order → カテゴリや投稿を並べ替えられるようにする
 
-
-
-
-
 ## 初回インポートファイル
 
 import-latest.xml をお使いください。(プラグインを先に入れてから)
@@ -52,5 +48,6 @@ isSidebarLeft:  true // falseに変更
 
 php ソース内の is_user_logged_in()でくくってる部分をコメントアウトすれば表示されます。ただ、目的外なので不具合が出るかもしれませんので、そこは自己責任でお願いします。さらには SEO 対策レスポンシブ対応は一切行っていません。URL も基本的に一つですのでご了承ください。
 
-- last update 210921
+- last update 210923 note/star/code タグ表示アイコン追加
+- update 210921
 - update 210914

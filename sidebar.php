@@ -12,26 +12,13 @@
   <?php if( is_user_logged_in() ) {?>
   <!-- サブメニュー 左サイドバーの場合はout_lにorder-2を入れる。右サイドバーの場合は削除 -->
   <div class="out_subbar com_bg-submenu h-screen overflow-y-auto" :class="{'order-2': isSidebarLeft }" style="width: 18rem">
-    <!-- <h2 class="text-sm bg-gray-600 pl-2 com_font-anton">items</h2> -->
     <ul class="pb-12">
-      <!-- <li v-for="n in defaultMenuData" :key="n.id" @click="readPage(n)" class="cursor-pointer border-b border-gray-300 border-dashed p-2 hover:bg-green-700">
-        <template v-if="n.tags">
-          <span v-for="nn in n.tags" :key="nn.term_id">
-            <template v-if="nn.slug === 'note'"><i class="fas fa-edit mr-1"></i></template>
-          </span>
-        </template>
-
-        <span class="text-xs font-bold">{{ n.title.rendered }}</span>
-      </li> -->
 
       <!-- 投稿がない時のみ表示(デフォルト表示) --------------------------------------------------->
       <template v-if="postData.length === 0">
-        <!-- <li v-if="postData.length === 0" @click="readURL(`${embedURL.locationURL}/wp-admin/index.php`)" class=""><i class="fas fa-edit mr-1"></i>admin</li>
-        <li v-if="postData.length === 0" @click="readURL(`${embedURL.locationURL}/wp-admin/post-new.php`)" class="cursor-pointer border-b border-gray-300 border-dashed p-2 hover:bg-green-700 text-xs font-bold"><i class="fas fa-edit mr-1"></i>new</li> -->
         <li v-for="n in allPostData" :key="n.id" @click="readPage(n)" class="cursor-pointer border-b border-gray-300 border-dashed hover:bg-green-700">
           <div class="">
-
-            <span class="text-xs font-bold">{{ n.title}}{{n.link}}</span>
+            <span class="text-xs font-bold">{{ n.title}}</span>
           </div>
           <div class="flex justify-end">
             <template v-if="n.tags">
@@ -44,16 +31,12 @@
             </template>
             <span class="text-xs">{{ returnDate(n.date)}}</span>
           </div>
-
-
         </li>
       </template>
 
       <!-- 投稿 --------------------------------------------------->
       <li v-for="n in postData" :key="n.id" @click="readPage(n)" class="cursor-pointer border-b border-gray-300 border-dashed hover:bg-green-700">
         <div class="">
-
-
           <span class="text-xs font-bold">{{ n.title.rendered }}</span>
         </div>
         <div class="flex justify-end">
@@ -62,7 +45,6 @@
               <template v-if="nn.slug === 'star'"><i class="text-yellow-400 fas fa-star mr-1"></i></template>
               <template v-if="nn.slug === 'note'"><i class="fas fa-edit mr-1"></i></template>
               <template v-else-if="nn.slug === 'code'"><i class="fas fa-code mr-1"></i></template>
-
             </span>
           </template>
           <span class="text-xs">{{ returnDate(n.date_gmt)}}</span>

@@ -95,47 +95,16 @@ const jsonRead = Vue.createApp({
         const { status, statusText } = error.response;
         console.log(`Error! HTTP Status: ${status} ${statusText}`);
       }
-
-      // let tmp = [];
-      // try {
-      //   let res = await fetch(
-      //     new URL(
-      //       `${locationURL}/wp-json/wp/v2/posts?_embed&per_page=100&page=1&categories_exclude=1`
-      //     )
-      //   );
-      //   let data = await res.json();
-
-      //   if (data.length < this.limitPostsNum) {
-      //     console.log('end', data.length);
-      //   } else {
-      //     let res2 = await fetch(
-      //       new URL(
-      //         `${locationURL}/wp-json/wp/v2/posts?_embed&per_page=100&page=2&categories_exclude=1`
-      //       )
-      //     );
-
-      // let data2 = await res2.json();
-      // console.log('date2', data2);
-      // tmp = date.concat(data2);
-      // console.log('tmp', tmp);
-      //   }
-      //   this.allPostData = data;
-      // } catch (e) {
-      //   const { status, statusText } = error.response;
-      //   console.log(`Error! HTTP Status: ${status} ${statusText}`);
-      // }
     },
     // --------------------------------------------------
     // カテゴリリストを取得
     // --------------------------------------------------
     async init(mover = true) {
-      // console.log('init');
       try {
         const res = await fetch(new URL(this.restCatURL));
         const data = await res.json();
 
         let tmp_arr = [];
-
         for (const n of data) {
           if (mover) {
             // サイドバーのマウスオーバーで開閉されないように
@@ -174,15 +143,6 @@ const jsonRead = Vue.createApp({
       }
     },
 
-    // async initMenu() {
-    //   try {
-    //     const res = await fetch(new URL(this.restDefaultMenuURL));
-    //     this.defaultMenuData = await res.json();
-    //   } catch (e) {
-    //     const { status, statusText } = error.response;
-    //     console.log(`Error! HTTP Status: ${status} ${statusText}`);
-    //   }
-    // },
     // --------------------------------------------------
     // 投稿ポストを取得
     // --------------------------------------------------
@@ -212,25 +172,28 @@ const jsonRead = Vue.createApp({
         console.log(`Error! HTTP Status: ${status} ${statusText}`);
       }
     },
+    // --------------------------------------------------
+    // URLのみiframeに渡す
+    // --------------------------------------------------
     readURL(url) {
       this.embedURL = { id: '', user: '', url: '', postId: '', locationURL: '', link: '' };
       this.embedURL.url = url;
     },
+    // --------------------------------------------------
+    // acfかcodepen等のURLか判別して表示
+    // --------------------------------------------------
     readPage(obj) {
-      console.log('readPagee', obj.rest);
-
       this.embedURL = { id: '', user: '', url: '', postId: '', locationURL: '', link: '' };
       this.embedURL.postId = obj.id;
-
       let acfURL = '';
+
       if (obj.rest) {
-        acfURL = obj.acf.cf_URL[0];
+        acfURL = obj.acf.cf_URL[0]; // カスタムrestAPI(function.php)
       } else {
-        acfURL = obj.acf.cf_URL;
+        acfURL = obj.acf.cf_URL; // 標準restAPI
       }
 
       if (acfURL) {
-        console.log('む');
         if (acfURL.indexOf('codepen') !== -1) {
           this.isNote = false;
           this.embedURL.id = acfURL.match(/pen\/(.*)/)[1];
@@ -250,37 +213,9 @@ const jsonRead = Vue.createApp({
           this.embedURL.locationURL = locationURL;
         }
       } else {
-        console.log('こ');
         console.log(obj.link);
         this.embedURL.link = obj.link;
       }
-
-      // if (obj.acf.cf_URL) {
-      //   console.log('む');
-      //   if (obj.acf.cf_URL.indexOf('codepen') !== -1) {
-      //     this.isNote = false;
-      //     this.embedURL.id = obj.acf.cf_URL.match(/pen\/(.*)/)[1];
-      //     this.embedURL.user = obj.acf.cf_URL.match(/io\/(.*)\/pen/)[1];
-      //     this.embedURL.url = obj.acf.cf_URL;
-
-      //     this.embedURL.locationURL = locationURL;
-      //     if (obj.tags !== false) {
-      //       for (const n of obj.tags) {
-      //         if (n.slug === 'note') {
-      //           this.isNote = true;
-      //         }
-      //       }
-      //     }
-      //   } else {
-      //     this.embedURL.url = obj.acf.cf_URL;
-      //     this.embedURL.locationURL = locationURL;
-      //   }
-      // } else {
-      //   console.log('こ');
-      //   console.log(obj.link);
-      //   this.embedURL.link = obj.link;
-      // }
-      // console.log(this.embedURL);
     },
     // --------------------------------------------------
     // メニュー開閉

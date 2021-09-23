@@ -211,13 +211,33 @@ h2.com_tail {
 }
 h3.com_tail,
 h4.com_tail,
-h5.com_tail {
+h5.com_tail,
+h6.com_tail {
   color: #424242;
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 700;
   position: relative;
 }
+h5.com_tail {
+  font-size: 1.1rem;
+  line-height: 1.65rem;
+}
+h6.com_tail,
+p.h6 {
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+}
+h4.com_tail,
+h5.com_tail,
+h6.com_tail {
+  padding-top: 0.5rem;
+  padding-bottom: 0.3rem;
+}
+h4.com_tail {
+  border-bottom: dashed 1px #a0aec0;
+}
+
 h3.com_tail {
   border-bottom: dashed 1px #a0aec0;
 
@@ -236,11 +256,7 @@ h3.com_tail {
     border-top: solid 1.5rem #3182ce;
   }
 }
-h4.com_tail {
-  border-bottom: dashed 1px #a0aec0;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
+
 .com_tail.mb {
   @apply mb-4;
 }

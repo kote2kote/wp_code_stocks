@@ -17,10 +17,15 @@
 .com_font-anton {
   font-family: 'Anton', sans-serif;
 }
+.com_font-noto {
+  font-family: 'Noto Sans JP', sans-serif;
+}
 .out_avatar .avatar {
   @apply rounded-full;
 }
-
+.out_subbar li {
+  @apply cursor-pointer border-b border-gray-300 border-dashed p-2 hover:bg-green-700 text-xs font-bold;
+}
 body.single {
   p {
     padding-bottom: 1rem;

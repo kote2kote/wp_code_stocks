@@ -33,6 +33,7 @@
     <div ref="loginChecker" class="hidden">ログイン中</div>
     <?php endif; ?>
 
+
     <div class="flex flex-grow" :class="{'flex-row-reverse': !isSidebarLeft }">
 
       <?php

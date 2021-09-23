@@ -351,3 +351,39 @@ function add_term_columns( $columns ) {
  }
  add_filter( 'manage_edit-category_sortable_columns', 'sort_term_columns' );
  add_filter( 'manage_edit-post_tag_sortable_columns', 'sort_term_columns' );
+
+// --------------------------------------------------
+// test
+// --------------------------------------------------
+function custom_api_get_all_posts() {
+  register_rest_route( 'custom/v1', '/allposts', array(
+      'methods' => 'GET',
+      'callback' => 'custom_api_get_all_posts_callback'
+  ));
+}
+add_action( 'rest_api_init', 'custom_api_get_all_posts' );   
+
+function custom_api_get_all_posts_callback( $request ) {
+  $posts_data = array();
+  $posts = get_posts( array(
+          'posts_per_page' => -1,
+          'category__not_in' => 1, // 「未分類」は外す
+      )
+  ); 
+  foreach( $posts as $post ) {
+      $id = $post->ID;
+      $posts_data[] = (object) array( 
+          'id' => $id, 
+          'slug' => $post->post_name,
+          'title' => $post->post_title,
+          'content' => $post->post_content,
+          'date' => $post->post_date,
+          'categories' => get_the_category($id),
+          'tags' =>  get_the_tags($id),
+          'link' => get_permalink($id),
+          'acf' =>  get_post_custom($id),
+          'rest' => true
+      );
+  }                  
+  return $posts_data;                   
+} 

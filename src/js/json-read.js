@@ -213,6 +213,7 @@ const jsonRead = Vue.createApp({
         locationURL: '',
         link: '',
       };
+      this.catId = null;
       this.postData = [];
       this.getAllPosts();
     },

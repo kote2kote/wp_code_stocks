@@ -15,7 +15,7 @@
 
 get_header();
 ?>
-<main class="main w-full">
+<main class="main w-full h-screen overflow-hidden">
   <!-- heder --------------------->
   <div class="bg-black text-white com_h-pageBottom w-full flex py-1 pr-2 justify-end" :class="{'flex-row-reverse': !isSidebarLeft}">
     <?php if( is_user_logged_in() ) {?>

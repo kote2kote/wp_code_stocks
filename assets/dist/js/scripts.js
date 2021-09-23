@@ -85,11 +85,8 @@ const jsonRead = Vue.createApp({
   methods: {
     async getAllPosts() {
       try {
-        console.log('aa', this.restAllPostURL);
         const res = await fetch(new URL(this.restAllPostURL));
-        console.log('bb');
         const data = await res.json();
-        console.log(data);
         this.allPostData = data;
       } catch (e) {
         const { status, statusText } = error.response;
@@ -147,7 +144,6 @@ const jsonRead = Vue.createApp({
     // 投稿ポストを取得
     // --------------------------------------------------
     async readPosts(id, mover = true) {
-      console.log('test', this.allPostData.length);
       if (mover) {
         // サイドバーのマウスオーバーで開閉されないように
         this.catId = id;
@@ -165,7 +161,6 @@ const jsonRead = Vue.createApp({
         if (data.length > 0) {
           this.postData = []; // 初期化
           this.postData = data;
-          console.log(this.postData);
         }
       } catch (e) {
         const { status, statusText } = error.response;
@@ -213,7 +208,6 @@ const jsonRead = Vue.createApp({
           this.embedURL.locationURL = locationURL;
         }
       } else {
-        console.log(obj.link);
         this.embedURL.link = obj.link;
       }
     },
@@ -239,6 +233,7 @@ const jsonRead = Vue.createApp({
         locationURL: '',
         link: '',
       };
+      this.catId = null;
       this.postData = [];
       this.getAllPosts();
     },

@@ -22,7 +22,7 @@
 // setting
 // ==================================================
 const locationURL = window.location.origin;
-const defaultURL = 'https://start.me/p/DPQNjG/top';
+const defaultURL = 'https://code-stocks.kote2.co/2021/10/02/top/';
 let isProd = false;
 
 // 開発環境か本番環境か
@@ -56,7 +56,7 @@ const jsonRead = Vue.createApp({
         user: '',
         url: defaultURL, // ログイン時の初期ページ
         postId: '',
-        locationURL: locationURL,
+        locationURL: '',
         link: '',
       },
       isNote: false,
@@ -87,6 +87,7 @@ const jsonRead = Vue.createApp({
       try {
         const res = await fetch(new URL(this.restAllPostURL));
         const data = await res.json();
+        // console.log(data);
         this.allPostData = data;
       } catch (e) {
         const { status, statusText } = error.response;
@@ -107,7 +108,7 @@ const jsonRead = Vue.createApp({
             // サイドバーのマウスオーバーで開閉されないように
             let tmp_arr2 = {};
             tmp_arr2.id = n.id;
-            tmp_arr2.isOpen = false;
+            tmp_arr2.isOpen = true;
             this.isOpenManageArray.push(tmp_arr2);
           }
 
@@ -154,13 +155,29 @@ const jsonRead = Vue.createApp({
         }
       }
 
+      tmpPostData = []; // 初期化
       try {
-        const url = `${locationURL}/wp-json/wp/v2/posts?_embed&per_page=100&page=1&categories=${id}`;
-        const res = await fetch(new URL(url));
+        // const url = `${locationURL}/wp-json/wp/v2/posts?_embed&per_page=100&page=1&categories=${id}`;
+        // const res = await fetch(new URL(url));
+        // const data = await res.json();
+        const res = await fetch(new URL(this.restAllPostURL));
         const data = await res.json();
+
         if (data.length > 0) {
-          this.postData = []; // 初期化
-          this.postData = data;
+          for (const n of data) {
+            for (const nn of n.categories) {
+              if (id === nn.term_id) {
+                // console.log(nn.term_id, id);
+                tmpPostData.push(n);
+              }
+            }
+          }
+          // console.log(tmpPostData);
+          if (tmpPostData.length === 0) {
+            return;
+          } else {
+            this.postData = tmpPostData;
+          }
         }
       } catch (e) {
         const { status, statusText } = error.response;
@@ -260,12 +277,15 @@ const jsonRead = Vue.createApp({
     // 擬似vuex(状態管理): サイドバーにマウスオーバしたらサイドメニューを更新
     // --------------------------------------------------
     catMouseOver() {
+      // console.log(this.isMouseOver, 'オーバー', this.catId);
       if (!this.isMouseOver) {
         this.init(false);
         if (this.catId) {
           // console.log(this.catId);
           this.readPosts(this.catId, false);
           // this.checkIsOpen(this.catId);
+        } else {
+          this.getAllPosts();
         }
         this.isMouseOver = true;
       }

@@ -159,6 +159,7 @@ register_nav_menus( array(
 // --------------------------------------------------
 // デフォルトrestAPIを修正 tags/categories/prev/nextを追加
 // --------------------------------------------------
+/*
 function editRestAPI( $data ) {
   $data->data['tags'] = get_the_tags(); // タグ
   $data->data['categories'] = get_the_category(); // カテゴリ
@@ -167,6 +168,7 @@ function editRestAPI( $data ) {
   return $data;
 }
 add_filter( 'rest_prepare_post', 'editRestAPI', 10, 3 );
+*/
 
 // // -- 前の記事 --------------------
 // function getPreviousPost() {
@@ -386,4 +388,4 @@ function custom_api_get_all_posts_callback( $request ) {
       );
   }                  
   return $posts_data;                   
-} 
+}

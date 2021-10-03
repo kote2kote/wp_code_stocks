@@ -1,1 +1,384 @@
-const locationURL=window.location.origin,defaultURL="https://start.me/p/DPQNjG/top";let isProd=!1;-1===locationURL.indexOf("localhost")&&(isProd=!0);const excludeCategory="",jsonRead=Vue.createApp({data:()=>({restCatURL:`${locationURL}/wp-json/wp/v2/categories?_embed&per_page=100&exclude=1`,restCatData:[],restPostURL:`${locationURL}/wp-json/wp/v2/posts?_embed&per_page=100&page=1&categories_exclude=1`,restAllPostURL:`${locationURL}/wp-json/custom/v1/allposts`,allPostData:[],limitPostsNum:100,postData:[],catId:null,embedURL:{id:"",user:"",url:defaultURL,postId:"",locationURL:locationURL,link:""},isNote:!1,searchWord:"",isOpenManageArray:[],readPostInterval:null,isMouseOver:!1,isSidebarLeft:!0}),mounted(){this.init(),this.getAllPosts()},methods:{async getAllPosts(){try{const t=await fetch(new URL(this.restAllPostURL)),s=await t.json();this.allPostData=s}catch(t){const{status:s,statusText:e}=error.response;console.log(`Error! HTTP Status: ${s} ${e}`)}},async init(t=!0){try{const s=await fetch(new URL(this.restCatURL)),e=await s.json();let o=[];for(const s of e){if(t){let t={};t.id=s.id,t.isOpen=!1,this.isOpenManageArray.push(t)}if(0===s.parent){s.children=[];for(const t of e)if(s.id===t.parent){t.children=[],s.children.push(t);for(const s of e)if(t.id===s.parent){s.children=[],t.children.push(s);for(const t of e)s.id===t.parent&&s.children.push(t)}}o.push(s)}}this.restCatData=o}catch(t){const{status:s,statusText:e}=error.response;console.log(`Error! HTTP Status: ${s} ${e}`)}},async readPosts(t,s=!0){if(s){this.catId=t;for(const s of this.isOpenManageArray)s.id===t&&(s.isOpen=!s.isOpen)}try{const s=`${locationURL}/wp-json/wp/v2/posts?_embed&per_page=100&page=1&categories=${t}`,e=await fetch(new URL(s)),o=await e.json();o.length>0&&(this.postData=[],this.postData=o)}catch(t){const{status:s,statusText:e}=error.response;console.log(`Error! HTTP Status: ${s} ${e}`)}},readURL(t){this.embedURL={id:"",user:"",url:"",postId:"",locationURL:"",link:""},this.embedURL.url=t},readPage(t){this.embedURL={id:"",user:"",url:"",postId:"",locationURL:"",link:""},this.embedURL.postId=t.id;let s="";if(s=t.rest?t.acf.cf_URL[0]:t.acf.cf_URL,s)if(-1!==s.indexOf("codepen")){if(this.isNote=!1,this.embedURL.id=s.match(/pen\/(.*)/)[1],this.embedURL.user=s.match(/io\/(.*)\/pen/)[1],this.embedURL.url=s,this.embedURL.locationURL=locationURL,!1!==t.tags)for(const s of t.tags)"note"===s.slug&&(this.isNote=!0)}else this.embedURL.url=s,this.embedURL.locationURL=locationURL;else this.embedURL.link=t.link},checkIsOpen(t){for(const s of this.isOpenManageArray)if(s.id===t)return s.isOpen},onReset(){this.embedURL={id:"",user:"",url:defaultURL,postId:"",locationURL:"",link:""},this.catId=null,this.postData=[],this.getAllPosts()},async onSearchSubmit(){console.log("submit!");try{const t=`${locationURL}/wp-json/wp/v2/posts?_embed&per_page=100&page=1&search=${this.searchWord}`,s=await fetch(new URL(t)),e=await s.json();e.length>0&&(this.postData=[],this.postData=e,console.log(e))}catch(t){const{status:s,statusText:e}=error.response;console.log(`Error! HTTP Status: ${s} ${e}`)}},catMouseOver(){this.isMouseOver||(this.init(!1),this.catId&&this.readPosts(this.catId,!1),this.isMouseOver=!0)},catMouseLeave(){this.isMouseOver=!1},switchSidebar(){this.isSidebarLeft=!this.isSidebarLeft},returnDate:t=>new Date(t).toLocaleDateString(),test(){}}}).mount(".vue_app"),testjsonRead=Vue.createApp({data:()=>({jsonURL:"http://localhost:10058/test/json/",jsonData:[]}),mounted(){this.init()},methods:{async init(){try{const t=await fetch(new URL(this.jsonURL)),s=await t.json();this.jsonData=s}catch(t){const{status:s,statusText:e}=error.response;console.log(`Error! HTTP Status: ${s} ${e}`)}}}}).mount(".vue_test01"),testjsonRead2=Vue.createApp({data:()=>({jsonURL:"http://localhost:10058/wp-json/wp/v2/categories?_embed&per_page=100&exclude=1",jsonData:[]}),mounted(){this.init()},methods:{async init(){try{const t=await fetch(new URL(this.jsonURL)),s=await t.json();let e=[];for(const t of s)if(0===t.parent){t.children=[];for(const e of s)if(t.id===e.parent){e.children=[],t.children.push(e);for(const t of s)e.id===t.parent&&e.children.push(t)}e.push(t)}console.log(e),this.jsonData=e}catch(t){const{status:s,statusText:e}=error.response;console.log(`Error! HTTP Status: ${s} ${e}`)}}}}).mount(".vue_test02");
+// ==================================================
+// debug tool
+// ==================================================
+// let isDebugMode = false;
+// const domDebug = document.querySelector('.js_debug');
+// function openDebug(e) {
+//   console.log(e);
+//   let isOK = false;
+//   if (e.keyCode === 65) {
+//     // z
+//     isDebugMode = !isDebugMode;
+//     if (isDebugMode) {
+//       domDebug.classList.remove('hidden');
+//     } else {
+//       domDebug.classList.add('hidden');
+//     }
+//   }
+// }
+// window.addEventListener('keyup', openDebug);
+
+// ==================================================
+// setting
+// ==================================================
+const locationURL = window.location.origin;
+const defaultURL = 'https://code-stocks.kote2.co/2021/10/02/top/';
+let isProd = false;
+
+// 開発環境か本番環境か
+if (locationURL.indexOf('localhost') === -1) {
+  isProd = true; // 本番環境
+}
+
+// 管理画面にログインしていない場合に表示しないカテゴリid
+// const excludeCategory = isProd ? '4+9+43+52+53' : '26+29+28+13+54'; // 左:本番、右:開発
+const excludeCategory = isProd ? '' : ''; // 左:本番、右:開発
+
+// ==================================================
+// main script
+// ==================================================
+
+const jsonRead = Vue.createApp({
+  data() {
+    return {
+      restCatURL: `${locationURL}/wp-json/wp/v2/categories?_embed&per_page=100&exclude=1`,
+      restCatData: [],
+      restPostURL: `${locationURL}/wp-json/wp/v2/posts?_embed&per_page=100&page=1&categories_exclude=1`,
+      restAllPostURL: `${locationURL}/wp-json/custom/v1/allposts`,
+      allPostData: [],
+      limitPostsNum: 100,
+      postData: [],
+      // restDefaultMenuURL: `${locationURL}/wp-json/wp/v2/posts?_embed&per_page=100&categories=61`, // 初回メニュー表示。お気に入りのカテゴリIDなど。
+      // defaultMenuData: [],
+      catId: null,
+      embedURL: {
+        id: '',
+        user: '',
+        url: defaultURL, // ログイン時の初期ページ
+        postId: '',
+        locationURL: '',
+        link: '',
+      },
+      isNote: false,
+      searchWord: '',
+      isOpenManageArray: [],
+      readPostInterval: null,
+      isMouseOver: false,
+      isSidebarLeft: true,
+    };
+  },
+  mounted() {
+    // loginChecker(refが表示されていればログイン)
+    // if (this.$refs.loginChecker) {
+    //   // 管理画面にログインしている場合
+    //   this.restCatURL = `${locationURL}/wp-json/wp/v2/categories?_embed&per_page=100&exclude=1`;
+    // } else {
+    //   // 管理画面にログインしていない場合
+    //   this.restCatURL = `${locationURL}/wp-json/wp/v2/categories?_embed&per_page=100&exclude=1`;
+    // }
+    // this.restCatURL = `${locationURL}/wp-json/wp/v2/categories?_embed&per_page=100&exclude=1`;
+    // console.log(this.restCatURL);
+    this.init();
+    // this.initMenu();
+    this.getAllPosts();
+  },
+  methods: {
+    async getAllPosts() {
+      try {
+        const res = await fetch(new URL(this.restAllPostURL));
+        const data = await res.json();
+        // console.log(data);
+        this.allPostData = data;
+      } catch (e) {
+        const { status, statusText } = error.response;
+        console.log(`Error! HTTP Status: ${status} ${statusText}`);
+      }
+    },
+    // --------------------------------------------------
+    // カテゴリリストを取得
+    // --------------------------------------------------
+    async init(mover = true) {
+      try {
+        const res = await fetch(new URL(this.restCatURL));
+        const data = await res.json();
+
+        let tmp_arr = [];
+        for (const n of data) {
+          if (mover) {
+            // サイドバーのマウスオーバーで開閉されないように
+            let tmp_arr2 = {};
+            tmp_arr2.id = n.id;
+            tmp_arr2.isOpen = true;
+            this.isOpenManageArray.push(tmp_arr2);
+          }
+
+          if (n.parent === 0) {
+            n.children = [];
+            for (const nn of data) {
+              if (n.id === nn.parent) {
+                nn.children = [];
+                n.children.push(nn);
+                for (const nnn of data) {
+                  if (nn.id === nnn.parent) {
+                    nnn.children = [];
+                    nn.children.push(nnn);
+                    for (const nnnn of data) {
+                      if (nnn.id === nnnn.parent) {
+                        nnn.children.push(nnnn);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            tmp_arr.push(n);
+          }
+        }
+        this.restCatData = tmp_arr;
+      } catch (e) {
+        const { status, statusText } = error.response;
+        console.log(`Error! HTTP Status: ${status} ${statusText}`);
+      }
+    },
+
+    // --------------------------------------------------
+    // 投稿ポストを取得
+    // --------------------------------------------------
+    async readPosts(id, mover = true) {
+      if (mover) {
+        // サイドバーのマウスオーバーで開閉されないように
+        this.catId = id;
+        for (const n of this.isOpenManageArray) {
+          if (n.id === id) {
+            n.isOpen = !n.isOpen;
+          }
+        }
+      }
+
+      tmpPostData = []; // 初期化
+      try {
+        // const url = `${locationURL}/wp-json/wp/v2/posts?_embed&per_page=100&page=1&categories=${id}`;
+        // const res = await fetch(new URL(url));
+        // const data = await res.json();
+        const res = await fetch(new URL(this.restAllPostURL));
+        const data = await res.json();
+
+        if (data.length > 0) {
+          for (const n of data) {
+            for (const nn of n.categories) {
+              if (id === nn.term_id) {
+                // console.log(nn.term_id, id);
+                tmpPostData.push(n);
+              }
+            }
+          }
+          // console.log(tmpPostData);
+          if (tmpPostData.length === 0) {
+            return;
+          } else {
+            this.postData = tmpPostData;
+          }
+        }
+      } catch (e) {
+        const { status, statusText } = error.response;
+        console.log(`Error! HTTP Status: ${status} ${statusText}`);
+      }
+    },
+    // --------------------------------------------------
+    // URLのみiframeに渡す
+    // --------------------------------------------------
+    readURL(url) {
+      this.embedURL = { id: '', user: '', url: '', postId: '', locationURL: '', link: '' };
+      this.embedURL.url = url;
+    },
+    // --------------------------------------------------
+    // acfかcodepen等のURLか判別して表示
+    // --------------------------------------------------
+    readPage(obj) {
+      this.embedURL = { id: '', user: '', url: '', postId: '', locationURL: '', link: '' };
+      this.embedURL.postId = obj.id;
+      let acfURL = '';
+
+      if (obj.rest) {
+        acfURL = obj.acf.cf_URL[0]; // カスタムrestAPI(function.php)
+      } else {
+        acfURL = obj.acf.cf_URL; // 標準restAPI
+      }
+
+      if (acfURL) {
+        if (acfURL.indexOf('codepen') !== -1) {
+          this.isNote = false;
+          this.embedURL.id = acfURL.match(/pen\/(.*)/)[1];
+          this.embedURL.user = acfURL.match(/io\/(.*)\/pen/)[1];
+          this.embedURL.url = acfURL;
+
+          this.embedURL.locationURL = locationURL;
+          if (obj.tags !== false) {
+            for (const n of obj.tags) {
+              if (n.slug === 'note') {
+                this.isNote = true;
+              }
+            }
+          }
+        } else {
+          this.embedURL.url = acfURL;
+          this.embedURL.locationURL = locationURL;
+        }
+      } else {
+        this.embedURL.link = obj.link;
+      }
+    },
+    // --------------------------------------------------
+    // メニュー開閉
+    // --------------------------------------------------
+    checkIsOpen(id) {
+      for (const n of this.isOpenManageArray) {
+        if (n.id === id) {
+          return n.isOpen;
+        }
+      }
+    },
+    // --------------------------------------------------
+    // トップに戻るボタン的な(リセット)
+    // --------------------------------------------------
+    onReset() {
+      this.embedURL = {
+        id: '',
+        user: '',
+        url: defaultURL,
+        postId: '',
+        locationURL: '',
+        link: '',
+      };
+      this.catId = null;
+      this.postData = [];
+      this.getAllPosts();
+    },
+    // --------------------------------------------------
+    // 検索クエリ処理
+    // --------------------------------------------------
+    async onSearchSubmit() {
+      console.log('submit!');
+      try {
+        const url = `${locationURL}/wp-json/wp/v2/posts?_embed&per_page=100&page=1&search=${this.searchWord}`;
+        const res = await fetch(new URL(url));
+        const data = await res.json();
+        if (data.length > 0) {
+          this.postData = []; // 初期化
+          this.postData = data;
+          console.log(data);
+        }
+      } catch (e) {
+        const { status, statusText } = error.response;
+        console.log(`Error! HTTP Status: ${status} ${statusText}`);
+      }
+    },
+    // --------------------------------------------------
+    // 擬似vuex(状態管理): サイドバーにマウスオーバしたらサイドメニューを更新
+    // --------------------------------------------------
+    catMouseOver() {
+      // console.log(this.isMouseOver, 'オーバー', this.catId);
+      if (!this.isMouseOver) {
+        this.init(false);
+        if (this.catId) {
+          // console.log(this.catId);
+          this.readPosts(this.catId, false);
+          // this.checkIsOpen(this.catId);
+        } else {
+          this.getAllPosts();
+        }
+        this.isMouseOver = true;
+      }
+    },
+    catMouseLeave() {
+      // console.log('leave');
+      this.isMouseOver = false;
+    },
+    switchSidebar() {
+      this.isSidebarLeft = !this.isSidebarLeft;
+    },
+    returnDate(data) {
+      const dt = new Date(data);
+      return dt.toLocaleDateString();
+    },
+    test() {
+      // console.log('test');
+    },
+  },
+}).mount('.vue_app');
+
+
+
+// ==================================================
+// test_json-read.js
+// ==================================================
+
+// -- PHP用 -------------- //
+const testjsonRead = Vue.createApp({
+  data() {
+    return {
+      jsonURL: 'http://localhost:10058/test/json/',
+      jsonData: [],
+    };
+  },
+  mounted() {
+    this.init();
+  },
+  methods: {
+    async init() {
+      try {
+        const res = await fetch(new URL(this.jsonURL));
+        const data = await res.json();
+        this.jsonData = data;
+      } catch (e) {
+        const { status, statusText } = error.response;
+        console.log(`Error! HTTP Status: ${status} ${statusText}`);
+      }
+    },
+  },
+}).mount('.vue_test01');
+
+// -- restAPI用 -------------- //
+const testjsonRead2 = Vue.createApp({
+  data() {
+    return {
+      jsonURL: 'http://localhost:10058/wp-json/wp/v2/categories?_embed&per_page=100&exclude=1',
+      jsonData: [],
+    };
+  },
+  mounted() {
+    this.init();
+  },
+  methods: {
+    async init() {
+      try {
+        const res = await fetch(new URL(this.jsonURL));
+        const data = await res.json();
+        let tmp_arr = [];
+        for (const n of data) {
+          if (n.parent === 0) {
+            n.children = [];
+            for (const nn of data) {
+              if (n.id === nn.parent) {
+                nn.children = [];
+                n.children.push(nn);
+                for (const nnn of data) {
+                  if (nn.id === nnn.parent) {
+                    nn.children.push(nnn);
+                  }
+                }
+              }
+            }
+            tmp_arr.push(n);
+          }
+        }
+        console.log(tmp_arr);
+        this.jsonData = tmp_arr;
+        // console.log(this.jsonData);
+      } catch (e) {
+        const { status, statusText } = error.response;
+        console.log(`Error! HTTP Status: ${status} ${statusText}`);
+      }
+    },
+  },
+}).mount('.vue_test02');

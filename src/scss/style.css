@@ -88,6 +88,11 @@ body {
   .com_hover-action:hover {
     opacity: 0.7; }
 
+.main-iframe a {
+  @apply text-blue-600 underline; }
+  .main-iframe a:hover {
+    @apply text-blue-400; }
+
 @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
   /* IE10 以降にのみ適用される */
   .ie-block {
@@ -219,7 +224,11 @@ body {
   font-family: 'object-fit: cover;';
   /* IE対策 */ }
 
-h1.com_tail {
+.com_h .wp-block-group {
+  @apply px-12 pb-12; }
+
+.com_h h1,
+.com_h .h1 {
   display: flex;
   align-items: center;
   background-color: #424242;
@@ -229,9 +238,11 @@ h1.com_tail {
   border-bottom-width: 2px;
   font-weight: 600;
   font-size: 1.875rem;
-  line-height: 2.25rem; }
+  line-height: 2.25rem;
+  margin-bottom: 1rem; }
 
-h2.com_tail {
+.com_h h2,
+.com_h .h2 {
   color: #424242;
   box-shadow: 2px 2px 0 0 black;
   border-width: 1px;
@@ -240,42 +251,19 @@ h2.com_tail {
   padding-left: 1rem;
   font-weight: 700;
   font-size: 1.875rem;
-  line-height: 2.25rem; }
+  line-height: 2.25rem;
+  margin-bottom: 1rem;
+  @apply mt-12; }
 
-h3.com_tail,
-h4.com_tail,
-h5.com_tail,
-h6.com_tail {
-  color: #424242;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  font-weight: 700;
-  position: relative; }
-
-h5.com_tail {
-  font-size: 1.1rem;
-  line-height: 1.65rem; }
-
-h6.com_tail,
-p.h6 {
-  font-size: 0.8rem;
-  line-height: 1.5rem; }
-
-h4.com_tail,
-h5.com_tail,
-h6.com_tail {
-  padding-top: 0.5rem;
-  padding-bottom: 0.3rem; }
-
-h4.com_tail {
-  border-bottom: dashed 1px #a0aec0; }
-
-h3.com_tail {
+.com_h h3,
+.com_h .h3 {
   border-bottom: dashed 1px #a0aec0;
   padding-left: 1rem;
   padding-top: 0.5rem;
-  padding-bottom: 0.5rem; }
-  h3.com_tail::before {
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem; }
+  .com_h h3::before,
+  .com_h .h3::before {
     position: absolute;
     content: '';
     left: 0;
@@ -285,11 +273,37 @@ h3.com_tail {
     height: 50%;
     border-top: solid 1.5rem #3182ce; }
 
-.com_tail.mb {
-  @apply mb-4; }
+.com_h h3,
+.com_h .h3,
+.com_h h4,
+.com_h .h4,
+.com_h h5,
+.com_h .h5,
+.com_h h6,
+.com_h .h6 {
+  color: #424242;
+  font-size: 1.4rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  position: relative; }
 
-.com_tail.my {
-  @apply mt-12 mb-4; }
+.com_h h4,
+.com_h .h4 {
+  font-size: 1.1rem;
+  line-height: 1.65rem;
+  margin-bottom: 0.5rem;
+  border-bottom: dashed 1px #a0aec0; }
+
+.com_h h5,
+.com_h .h5 {
+  font-size: 1rem;
+  line-height: 1.6rem;
+  margin-bottom: 0.25rem; }
+
+.com_h h6,
+.com_h .h6 {
+  font-size: 0.8rem;
+  line-height: 1.5rem; }
 
 .com_bg-sidebar {
   background: #005d72; }

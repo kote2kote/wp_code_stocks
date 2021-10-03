@@ -18,12 +18,16 @@
       <template v-if="postData.length === 0">
         <li v-for="n in allPostData" :key="n.id" @click="readPage(n)" class="cursor-pointer border-b border-gray-300 border-dashed hover:bg-green-700">
           <div class="">
+            <template v-if="n.tags">
+              <span v-for="nn in n.tags" :key="nn.id">
+                <template v-if="nn.slug === 'star'"><i class="text-yellow-400 fas fa-star mr-1"></i></template>
+              </span>
+            </template>
             <span class="text-xs font-bold">{{ n.title}}</span>
           </div>
           <div class="flex justify-end">
             <template v-if="n.tags">
               <span v-for="nn in n.tags" :key="nn.id">
-                <template v-if="nn.slug === 'star'"><i class="text-yellow-400 fas fa-star mr-1"></i></template>
                 <template v-if="nn.slug === 'note'"><i class="fas fa-edit mr-1"></i></template>
                 <template v-else-if="nn.slug === 'code'"><i class="fas fa-code mr-1"></i></template>
 
@@ -37,17 +41,21 @@
       <!-- 投稿 --------------------------------------------------->
       <li v-for="n in postData" :key="n.id" @click="readPage(n)" class="cursor-pointer border-b border-gray-300 border-dashed hover:bg-green-700">
         <div class="">
-          <span class="text-xs font-bold">{{ n.title.rendered }}</span>
+          <template v-if="n.tags">
+            <span v-for="nn in n.tags" :key="nn.term_id">
+              <template v-if="nn.slug === 'star'"><i class="text-yellow-400 fas fa-star mr-1"></i></template>
+            </span>
+          </template>
+          <span class="text-xs font-bold">{{ n.title }}</span>
         </div>
         <div class="flex justify-end">
           <template v-if="n.tags">
             <span v-for="nn in n.tags" :key="nn.term_id">
-              <template v-if="nn.slug === 'star'"><i class="text-yellow-400 fas fa-star mr-1"></i></template>
               <template v-if="nn.slug === 'note'"><i class="fas fa-edit mr-1"></i></template>
               <template v-else-if="nn.slug === 'code'"><i class="fas fa-code mr-1"></i></template>
             </span>
           </template>
-          <span class="text-xs">{{ returnDate(n.date_gmt)}}</span>
+          <span class="text-xs">{{ returnDate(n.date)}}</span>
         </div>
       </li>
     </ul>
@@ -101,15 +109,18 @@
       <div class="inner pt-2 pb-12">
         <ul class="text-sm">
           <li v-for="n in restCatData" :key="n.id" class="pb-6">
-            <span class="inline-block font-bold com_font-noto font-black w-full cm py-1 pl-2">{{ n.name }}</span>
+            <span class="inline-block font-bold com_font-anton text-lg w-full cm py-1 pl-2">{{ n.name }}</span>
             <template v-if="n.children.length !== 0">
               <ul class="ml-6">
                 <li v-for="nn in n.children" :key="nn.id" class="py-1">
-                  <i v-if="nn.children.length !== 0" class="fas fa-chevron-right mr-2 text-xs"></i><span @click="readPosts(nn.id)" class="cursor-pointer text-sm">{{ nn.name }}</span>
+                  <i v-if="nn.children.length !== 0 && !checkIsOpen(nn.id)" class="fas fa-chevron-right mr-2 text-xs"></i>
+                  <i v-else-if="nn.children.length !== 0 && checkIsOpen(nn.id)" class="fas fa-chevron-down mr-2 text-xs"></i>
+                  <span @click="readPosts(nn.id)" class="cursor-pointer text-sm font-bold">{{ nn.name }}</span>
                   <template v-if="nn.children.length !== 0 && checkIsOpen(nn.id)">
                     <ul class="ml-4">
                       <li v-for="nnn in nn.children" :key="nnn.id" class="py-1">
-                        <i v-if="nnn.children.length !== 0" class="fas fa-chevron-right mr-2 text-xs"></i>
+                        <i v-if="nnn.children.length !== 0 && !checkIsOpen(nnn.id)" class="fas fa-chevron-right mr-2 text-xs"></i>
+                        <i v-else-if="nnn.children.length !== 0 && checkIsOpen(nnn.id)" class="fas fa-chevron-down mr-2 text-xs"></i>
                         <span @click="readPosts(nnn.id)" class="cursor-pointer text-xs ">{{ nnn.name }}</span>
                         <template v-if="nnn.children.length !== 0 && checkIsOpen(nnn.id)">
                           <ul class="ml-4">

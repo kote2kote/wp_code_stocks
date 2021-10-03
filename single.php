@@ -9,7 +9,7 @@
 get_header('single');
 ?>
 <main class="main w-full">
-  <div class="inner">
+  <div class="inner com_h">
     <?php 
     if( is_user_logged_in() ) {
       while (have_posts()) {

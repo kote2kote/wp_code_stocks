@@ -31,7 +31,7 @@ get_header();
     <?php } ?>
     <template v-if="embedURL.url || embedURL.postId">
       <?php if( is_user_logged_in() ) {?>
-      <span @click="readURL(`${embedURL.locationURL}/wp-admin/post.php?post=${embedURL.postId}&action=edit`)" class="cursor-pointer inline-block h-6 mx-2"><i class="fas fa-pen mr-1"></i>edit</span>
+      <span @click="readURL(`${embedURL.locationURL}/wp-admin/post.php?post=${embedURL.postId ? embedURL.postId : 802}&action=edit`)" class="cursor-pointer inline-block h-6 mx-2"><i class="fas fa-pen mr-1"></i>edit</span> <!-- 802は初期ページのpostID -->
       <a target="_blank" :href="`${embedURL.url}`" class="inline-block mx-2 h-6"><i class="fas fa-external-link-alt mr-1"></i>view</a>
       <?php } ?>
     </template>

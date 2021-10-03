@@ -59,7 +59,7 @@ if(isset($tags[0])) {
   <div class="text-center pb-12"><img class="inline-block" style="width: 500px;" src="<?php echo $thumb; ?>" alt=""></div>
   <?php } ?>
 
-  <div>
+  <div class="main-iframe">
     <?php the_content(); ?>
   </div>
 

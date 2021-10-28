@@ -54,11 +54,11 @@ function previewReload(done) {
 }
 
 //Development Tasks
-function devHTML() {
-  return src(`${options.paths.src.base}/**/*.html`)
-    .pipe(dest(options.paths.dist.base))
-    .pipe(dest(options.paths.build.base));
-}
+// function devHTML() {
+//   return src(`${options.paths.src.base}/**/*.html`)
+//     .pipe(dest(options.paths.dist.base))
+//     .pipe(dest(options.paths.build.base));
+// }
 
 function devStyles() {
   const tailwindcss = require('tailwindcss');
@@ -67,8 +67,7 @@ function devStyles() {
     .pipe(dest(options.paths.src.css))
     .pipe(postcss([tailwindcss(options.config.tailwindjs), require('autoprefixer')]))
     .pipe(concat({ path: 'style.css' }))
-    .pipe(dest(options.paths.dist.css))
-    .pipe(dest(options.paths.build.css));
+    .pipe(dest(options.paths.root));
 }
 
 function devScripts() {
@@ -89,7 +88,7 @@ function devImages() {
 }
 
 function watchFiles() {
-  watch(`${options.paths.src.base}/**/*.html`, series(devHTML, devStyles, previewReload));
+  watch(`${options.paths.src.base}/**/*.html`, series(devStyles, previewReload));
   watch(`./**/*.php`, series(devStyles, previewReload));
   watch(
     [options.config.tailwindjs, `${options.paths.src.css}/**/*.scss`],
@@ -123,7 +122,7 @@ function prodStyles() {
     .pipe(postcss([tailwindcss(options.config.tailwindjs), require('autoprefixer')]))
     .pipe(concat({ path: 'style.css' }))
     .pipe(cleanCSS({ compatibility: 'ie8' }))
-    .pipe(dest(options.paths.build.css));
+    .pipe(dest(options.paths.root));
 }
 
 function prodScripts() {
@@ -154,7 +153,7 @@ function buildFinish(done) {
 
 exports.default = series(
   devClean, // Clean Dist Folder
-  parallel(devStyles, devScripts, devImages, icon, devHTML, prodDevSVG), //Run All tasks in parallel
+  parallel(devStyles, devScripts, devImages, icon, prodDevSVG), //Run All tasks in parallel
   livePreview, // Live Preview Build
   watchFiles // Watch for Live Changes
 );

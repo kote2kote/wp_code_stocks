@@ -193,6 +193,10 @@ body {
 // parts common
 // ==================================================
 .com_h {
+  ol {
+    list-style-type: decimal;
+    padding-left: 2rem;
+  }
   .wp-block-group {
     @apply px-12 pb-12;
   }
@@ -221,8 +225,8 @@ body {
     font-weight: 700;
     font-size: 1.875rem;
     line-height: 2.25rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
-    @apply mt-12;
   }
   h3,
   .h3 {

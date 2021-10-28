@@ -2,16 +2,20 @@
 /*!
 Theme Name: wp_code_stocks
 Author: kote2
-Author URI: https://twitter.com/kote2
+Author URI: https://kote2.tokyo
 Description: codepenを表示する事に特化したwordpressテーマです
 Version: 1.0.0
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 */
+/*@tailwind base*/
 @import 'https://codepen.io/kote2kote/pen/bGWRWqG.css';
 @tailwind base;
+/*@tailwind components*/
 @tailwind components;
+/*@tailwind utilities*/
 @tailwind utilities;
+/* commons */
 .v-color-theme {
   color: #005d72; }
 
@@ -71,7 +75,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -moz-font-feature-settings: 'liga', 'kern';
   text-rendering: optimizeLegibility;
-  background: #000 no-repeat;
+  background: #fff no-repeat;
   word-wrap: break-word;
   font-size: 16; }
 
@@ -224,6 +228,10 @@ body {
   font-family: 'object-fit: cover;';
   /* IE対策 */ }
 
+.com_h ol {
+  list-style-type: decimal;
+  padding-left: 2rem; }
+
 .com_h .wp-block-group {
   @apply px-12 pb-12; }
 
@@ -252,8 +260,8 @@ body {
   font-weight: 700;
   font-size: 1.875rem;
   line-height: 2.25rem;
-  margin-bottom: 1rem;
-  @apply mt-12; }
+  margin-top: 2rem;
+  margin-bottom: 1rem; }
 
 .com_h h3,
 .com_h .h3 {
@@ -327,7 +335,8 @@ body {
   @apply rounded-full; }
 
 .out_subbar li {
-  @apply cursor-pointer border-b border-gray-300 border-dashed p-2 hover:bg-green-700 text-xs font-bold; }
+  transition: all 0.2s ease;
+  @apply cursor-pointer border-b border-gray-300 border-dashed p-2 hover:bg-gray-600 text-xs font-bold; }
 
 body.single p {
   padding-bottom: 1rem; }
@@ -335,7 +344,45 @@ body.single p {
 #toc_container {
   @apply fixed right-0 bg-gray-100;
   top: 4.3rem; }
+  @media only screen and (max-width: 639px) {
+    #toc_container {
+      display: none; } }
 
+.com_hamburger-btn label:hover .el-icon::before {
+  top: -0.5rem; }
+
+.com_hamburger-btn label:hover .el-icon::after {
+  top: 0.5rem; }
+
+.com_hamburger-btn input:checked ~ .el-icon {
+  background-color: transparent; }
+
+.com_hamburger-btn input:checked ~ .el-icon::before {
+  top: 0;
+  transform: rotate(135deg); }
+
+.com_hamburger-btn input:checked ~ .el-icon::after {
+  top: 0;
+  transform: rotate(-135deg); }
+
+.com_hamburger-btn .el-icon, .com_hamburger-btn .el-icon::before, .com_hamburger-btn .el-icon::after {
+  width: 1rem;
+  height: 2px;
+  background-color: #333; }
+
+.com_hamburger-btn .el-icon::before, .com_hamburger-btn .el-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  transition: all 0.2s; }
+
+.com_hamburger-btn .el-icon::before {
+  top: -0.4rem; }
+
+.com_hamburger-btn .el-icon::after {
+  top: 0.4rem; }
+
+/* pages */
 .Pocari .Hero .area-arrow-left,
 .Pocari .Hero .area-arrow-right {
   top: 50%;

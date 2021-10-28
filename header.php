@@ -8,6 +8,10 @@
  *
  * @package wp_code_stocks
  */
+$url = home_url() . "/wp-admin";
+if( !is_user_logged_in() ) {
+  header("Location:" . $url );
+}
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -28,11 +32,9 @@
 
   <div class="vue_app com_h-pageTop inner flex flex-col justify-between">
 
-    <?php if( is_user_logged_in() ) : ?>
+
     <!-- WPの管理画面にログインしているならrefを表示。vueで取得してログイン状態をvueに渡す -->
     <div ref="loginChecker" class="hidden">ログイン中</div>
-    <?php endif; ?>
-
 
     <div class="flex flex-grow" :class="{'flex-row-reverse': !isSidebarLeft }">
 

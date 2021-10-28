@@ -24,17 +24,75 @@
   @apply rounded-full;
 }
 .out_subbar li {
-  @apply cursor-pointer border-b border-gray-300 border-dashed p-2 hover:bg-green-700 text-xs font-bold;
+  transition: all 0.2s ease;
+  @apply cursor-pointer border-b border-gray-300 border-dashed p-2 hover:bg-gray-600 text-xs font-bold;
 }
 body.single {
   p {
     padding-bottom: 1rem;
   }
 }
-
 // サイドバー目次のデザイン上書き設定
 // http://blog.appspace.jp/wordpress/how-to-install-tableofcontentsplus/#i-17
 #toc_container {
   @apply fixed right-0 bg-gray-100;
   top: 4.3rem;
+  @media only screen and (max-width: 639px) {
+    // tb: 520,pc: 960,sm: 640,md: 768,lg: 1024,xl: 1280,wide: 1536
+    // maxは-1 (例) tb → 520 - 1 = max-width: 519px
+    display: none;
+  }
+}
+
+// --------------------------------------------------
+// ハンバーガーアイコン
+// --------------------------------------------------
+.com_hamburger-btn {
+  label {
+    &:hover .el-icon::before {
+      top: -0.5rem;
+    }
+    &:hover .el-icon::after {
+      top: 0.5rem;
+    }
+  }
+  input {
+    &:checked ~ .el-icon {
+      background-color: transparent;
+    }
+    &:checked ~ .el-icon::before {
+      top: 0;
+      transform: rotate(135deg);
+    }
+
+    &:checked ~ .el-icon::after {
+      top: 0;
+      transform: rotate(-135deg);
+    }
+  }
+
+  .el-icon {
+    &,
+    &::before,
+    &::after {
+      width: 1rem;
+      height: 2px;
+      background-color: #333;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      transition: all 0.2s;
+    }
+
+    &::before {
+      top: -0.4rem;
+    }
+    &::after {
+      top: 0.4rem;
+    }
+  }
 }

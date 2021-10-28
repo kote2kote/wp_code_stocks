@@ -2,7 +2,8 @@
 // setting
 // ==================================================
 const locationURL = window.location.origin;
-const defaultURL = 'https://code-stocks.kote2.co/2021/10/02/top/';
+// const defaultURL = `https://code-stocks.kote2.co/archives/802`;
+const defaultURL = `https://start.me/p/DPQNjG/top`;
 let isProd = false;
 
 // 開発環境か本番環境か
@@ -45,6 +46,7 @@ const jsonRead = Vue.createApp({
       readPostInterval: null,
       isMouseOver: false,
       isSidebarLeft: true,
+      isMobileToggle: false,
     };
   },
   mounted() {
@@ -63,6 +65,10 @@ const jsonRead = Vue.createApp({
     this.getAllPosts();
   },
   methods: {
+    changeMobile() {
+      console.log('isMobile', this.isMobileToggle);
+      this.isMobileToggle = !this.isMobileToggle;
+    },
     async getAllPosts() {
       try {
         const res = await fetch(new URL(this.restAllPostURL));
@@ -88,7 +94,7 @@ const jsonRead = Vue.createApp({
             // サイドバーのマウスオーバーで開閉されないように
             let tmp_arr2 = {};
             tmp_arr2.id = n.id;
-            tmp_arr2.isOpen = true;
+            tmp_arr2.isOpen = false; // タブを初期に閉じたい場合はfalse
             this.isOpenManageArray.push(tmp_arr2);
           }
 
@@ -157,6 +163,7 @@ const jsonRead = Vue.createApp({
             return;
           } else {
             this.postData = tmpPostData;
+            // console.log(this.postData);
           }
         }
       } catch (e) {
@@ -175,6 +182,7 @@ const jsonRead = Vue.createApp({
     // acfかcodepen等のURLか判別して表示
     // --------------------------------------------------
     readPage(obj) {
+      // console.log(obj);
       this.embedURL = { id: '', user: '', url: '', postId: '', locationURL: '', link: '' };
       this.embedURL.postId = obj.id;
       let acfURL = '';
@@ -187,20 +195,31 @@ const jsonRead = Vue.createApp({
 
       if (acfURL) {
         if (acfURL.indexOf('codepen') !== -1) {
-          this.isNote = false;
+          // console.log('codepen');
+          // this.isNote = false;
           this.embedURL.id = acfURL.match(/pen\/(.*)/)[1];
           this.embedURL.user = acfURL.match(/io\/(.*)\/pen/)[1];
           this.embedURL.url = acfURL;
 
           this.embedURL.locationURL = locationURL;
-          if (obj.tags !== false) {
-            for (const n of obj.tags) {
-              if (n.slug === 'note') {
-                this.isNote = true;
-              }
-            }
-          }
+          // if (obj.tags !== false) {
+          //   for (const n of obj.tags) {
+          //     if (n.slug === 'note') {
+          //       this.isNote = true;
+          //     }
+          //   }
+          // }
         } else {
+          // console.log('codepenじゃない');
+          // if (obj.tags !== false) {
+          //   for (const n of obj.tags) {
+          //     if (n.slug === 'blank') {
+          //       // window.location.href = acfURL;
+          //       window.open(acfURL, '_blank');
+          //       return;
+          //     }
+          //   }
+          // }
           this.embedURL.url = acfURL;
           this.embedURL.locationURL = locationURL;
         }
@@ -246,7 +265,7 @@ const jsonRead = Vue.createApp({
         if (data.length > 0) {
           this.postData = []; // 初期化
           this.postData = data;
-          console.log(data);
+          // console.log(data);
         }
       } catch (e) {
         const { status, statusText } = error.response;

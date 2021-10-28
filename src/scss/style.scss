@@ -1,17 +1,20 @@
 /*!
 Theme Name: wp_code_stocks
 Author: kote2
-Author URI: https://twitter.com/kote2
+Author URI: https://kote2.tokyo
 Description: codepenを表示する事に特化したwordpressテーマです
 Version: 1.0.0
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 */
+/*@tailwind base*/
 @tailwind base;
+/*@tailwind components*/
 @tailwind components;
+/*@tailwind utilities*/
 @tailwind utilities;
 
-// commons
+/* commons */
 @import 'variables';
 @import 'functions';
 @import 'mixins';
@@ -19,6 +22,6 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.html
 @import 'common';
 @import 'https://codepen.io/kote2kote/pen/bGWRWqG.css'; // form reset
 @import 'parts_common';
-// pages
+/* pages */
 @import 'pages/pages.scss';
 @import 'pages/210405_pocari.scss';

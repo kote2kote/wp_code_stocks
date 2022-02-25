@@ -804,6 +804,14 @@ video {
 	--tw-text-opacity: 1;
 	color: rgba(251, 191, 36, var(--tw-text-opacity));
 }
+.text-green-400{
+	--tw-text-opacity: 1;
+	color: rgba(52, 211, 153, var(--tw-text-opacity));
+}
+.text-yellow-500{
+	--tw-text-opacity: 1;
+	color: rgba(245, 158, 11, var(--tw-text-opacity));
+}
 .text-gray-700{
 	--tw-text-opacity: 1;
 	color: rgba(55, 65, 81, var(--tw-text-opacity));
@@ -1174,6 +1182,7 @@ body.single p {
 #toc_container{
 	position: fixed;
 	right: 0px;
+	z-index: 50;
 	--tw-bg-opacity: 1;
 	background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
   top: 4.3rem;

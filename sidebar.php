@@ -33,6 +33,8 @@
           <div class="flex justify-end">
             <template v-if="n.tags">
               <span v-for="nn in n.tags" :key="nn.id">
+                <template v-if="nn.slug === 'check'"><i class="fas fa-check text-green-400 mr-1"></i></template>
+                <template v-if="nn.slug === 'x'"><i class="fas fa-exclamation-triangle text-yellow-500 mr-1"></i></template>
                 <template v-if="nn.slug === 'note'"><i class="fas fa-edit mr-1"></i></template>
                 <template v-if="nn.slug === 'code'"><i class="fas fa-code mr-1"></i></template>
               </span>
@@ -64,6 +66,8 @@
         <div class="flex justify-end">
           <template v-if="n.tags">
             <span v-for="nn in n.tags" :key="nn.term_id">
+              <template v-if="nn.slug === 'check'"><i class="fas fa-check text-green-400 mr-1"></i></template>
+              <template v-if="nn.slug === 'x'"><i class="fas fa-exclamation-triangle text-yellow-500 mr-1"></i></template>
               <template v-if="nn.slug === 'note'"><i class="fas fa-edit mr-1"></i></template>
               <template v-if="nn.slug === 'code'"><i class="fas fa-code mr-1"></i></template>
             </span>

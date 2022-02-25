@@ -22,9 +22,11 @@ const excludeCategory = isProd ? '' : ''; // 左:本番、右:開発
 const jsonRead = Vue.createApp({
   data() {
     return {
-      restCatURL: `${locationURL}/wp-json/wp/v2/categories?_embed&per_page=100&exclude=1`,
+      // restCatURL: `${locationURL}/wp-json/wp/v2/categories?_embed&per_page=100&exclude=1`,
+      restCatURL: `${locationURL}/wp-json/wp/v2/categories?_embed&per_page=100`,
       restCatData: [],
-      restPostURL: `${locationURL}/wp-json/wp/v2/posts?_embed&per_page=100&page=1&categories_exclude=1`,
+      // restPostURL: `${locationURL}/wp-json/wp/v2/posts?_embed&per_page=100&page=1&categories_exclude=1`,
+      restPostURL: `${locationURL}/wp-json/wp/v2/posts?_embed&per_page=100&page=1`,
       restAllPostURL: `${locationURL}/wp-json/custom/v1/allposts`,
       allPostData: [],
       limitPostsNum: 100,

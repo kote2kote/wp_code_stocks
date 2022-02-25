@@ -35,7 +35,7 @@ body.single {
 // サイドバー目次のデザイン上書き設定
 // http://blog.appspace.jp/wordpress/how-to-install-tableofcontentsplus/#i-17
 #toc_container {
-  @apply fixed right-0 bg-gray-100;
+  @apply fixed right-0 bg-gray-100 z-50;
   top: 4.3rem;
   @media only screen and (max-width: 639px) {
     // tb: 520,pc: 960,sm: 640,md: 768,lg: 1024,xl: 1280,wide: 1536

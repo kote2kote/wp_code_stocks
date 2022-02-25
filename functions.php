@@ -369,7 +369,7 @@ function custom_api_get_all_posts_callback( $request ) {
   $posts_data = array();
   $posts = get_posts( array(
           'posts_per_page' => -1,
-          'category__not_in' => 1, // 「未分類」は外す
+          // 'category__not_in' => 1, // 「未分類」は外す
       )
   ); 
   foreach( $posts as $post ) {

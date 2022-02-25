@@ -30,8 +30,9 @@ get_header();
         </div>
       </div>
       <div class="out_r">
-
-        <!-- <a :href="`${embedURL.locationURL}`" class="cursor-pointer inline-block h-6 mx-2"><i class="fas fa-sync-alt mr-1"></i></i>reload</a> -->
+        <template v-if="embedURL.postId">
+          <span class="inline-block h-6 mx-2">https://code-stocks.kote2.biz/archives/{{embedURL.postId}}</span>
+        </template>
         <span @click="readURL(`${embedURL.locationURL}/wp-admin/index.php`)" class="cursor-pointer inline-block h-6 mx-2"><i class="fas fa-edit mr-1"></i>admin</span>
         <span @click="readURL(`${embedURL.locationURL}/wp-admin/post-new.php`)" class="cursor-pointer inline-block h-6 mx-2"><i class="fas fa-edit mr-1"></i>new</span>
 

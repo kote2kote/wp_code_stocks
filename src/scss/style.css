@@ -342,7 +342,7 @@ body.single p {
   padding-bottom: 1rem; }
 
 #toc_container {
-  @apply fixed right-0 bg-gray-100;
+  @apply fixed right-0 bg-gray-100 z-50;
   top: 4.3rem; }
   @media only screen and (max-width: 639px) {
     #toc_container {

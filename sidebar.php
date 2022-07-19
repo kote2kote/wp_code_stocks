@@ -132,7 +132,7 @@
                 <li v-for="nn in n.children" :key="nn.id" class="py-1">
                   <i v-if="nn.children.length !== 0 && !checkIsOpen(nn.id)" class="fas fa-chevron-right mr-2 text-sm"></i>
                   <i v-else-if="nn.children.length !== 0 && checkIsOpen(nn.id)" class="fas fa-chevron-down mr-2 text-sm"></i>
-                  <span @click="readPosts(nn.id)" class="cursor-pointer text-sm font-bold">{{ nn.name }}</span>
+                  <span @click="readPosts(nn.id)" class="cursor-pointer com_font-anton text-lg">{{ nn.name }}</span>
                   <template v-if="nn.children.length !== 0 && checkIsOpen(nn.id)">
                     <ul class="ml-4">
                       <li v-for="nnn in nn.children" :key="nnn.id" class="py-1">

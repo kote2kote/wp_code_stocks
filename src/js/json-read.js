@@ -96,7 +96,7 @@ const jsonRead = Vue.createApp({
             // サイドバーのマウスオーバーで開閉されないように
             let tmp_arr2 = {};
             tmp_arr2.id = n.id;
-            tmp_arr2.isOpen = false; // タブを初期に閉じたい場合はfalse
+            tmp_arr2.isOpen = true; // タブを初期に閉じたい場合はfalse
             this.isOpenManageArray.push(tmp_arr2);
           }
 

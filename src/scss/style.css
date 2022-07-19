@@ -8,14 +8,10 @@ Version: 1.0.0
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 */
-/*@tailwind base*/
 @import 'https://codepen.io/kote2kote/pen/bGWRWqG.css';
 @tailwind base;
-/*@tailwind components*/
 @tailwind components;
-/*@tailwind utilities*/
 @tailwind utilities;
-/* commons */
 .v-color-theme {
   color: #005d72; }
 
@@ -75,7 +71,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -moz-font-feature-settings: 'liga', 'kern';
   text-rendering: optimizeLegibility;
-  background: #fff no-repeat;
+  background: #000 no-repeat;
   word-wrap: break-word;
   font-size: 16; }
 
@@ -335,14 +331,13 @@ body {
   @apply rounded-full; }
 
 .out_subbar li {
-  transition: all 0.2s ease;
-  @apply cursor-pointer border-b border-gray-300 border-dashed p-2 hover:bg-gray-600 text-xs font-bold; }
+  @apply cursor-pointer border-b border-gray-300 border-dashed p-2 hover:bg-green-700 text-xs font-bold; }
 
 body.single p {
   padding-bottom: 1rem; }
 
 #toc_container {
-  @apply fixed right-0 bg-gray-100 z-50;
+  @apply fixed right-0 bg-gray-100;
   top: 4.3rem; }
   @media only screen and (max-width: 639px) {
     #toc_container {
@@ -382,7 +377,6 @@ body.single p {
 .com_hamburger-btn .el-icon::after {
   top: 0.4rem; }
 
-/* pages */
 .Pocari .Hero .area-arrow-left,
 .Pocari .Hero .area-arrow-right {
   top: 50%;

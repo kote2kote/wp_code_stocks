@@ -114,7 +114,7 @@ function wp_code_stocks_scripts() {
   // smoothscroll-polyfill for I,MSEdge, Safari
   // wp_enqueue_script( 'wp_code_stocks-smoothscroll-polyfill', '//unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js', array(), $id, true);
   wp_enqueue_script( 'wp_code_stocks-script-vue', 'https://unpkg.com/vue@next', array(), $id, true); // isDev
-  // wp_enqueue_script( 'wp_code_stocks-script-google-map', 'http://maps.google.com/maps/api/js?key=AIzaSyAAy__ZCpT3NEd7K2i3TBHAJgd66eBpFI0&language=ja', array(), $id, true); // isDev
+
   // wp_enqueue_script( 'wp_code_stocks-script-vue', 'https://cdn.jsdelivr.net/npm/vue@2', array(), $id, true); // isProd
   wp_enqueue_script( 'wp_code_stocks-script-js', get_template_directory_uri(). '/assets/build/js/scripts.js', array(), $id, true);
   // if($is_prod){
